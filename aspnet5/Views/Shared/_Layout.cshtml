@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/knockoutjs")
 
 </head>
 <body>
@@ -40,7 +41,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/HelloDustin.js")
-    <script type='text/javascript' src='knockout-3.4.0.js'></script>
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>
