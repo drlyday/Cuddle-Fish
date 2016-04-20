@@ -1,4 +1,6 @@
-﻿@model aspnet5.ViewModels.MovieSearchViewModel
+﻿@using aspnet5.Extensions;
+@model aspnet5.ViewModels.MovieSearchViewModel
+
 
 @{
     ViewBag.Title = "Index";
@@ -73,3 +75,13 @@
     }     
     </table>
 }
+
+@section scripts
+{
+    var jsonModel = @(Html.ToJson(Model));
+}
+
+<script>
+    var jsonModel = @(Html.ToJson(Model))
+
+</script>

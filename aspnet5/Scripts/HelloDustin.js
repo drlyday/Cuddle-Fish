@@ -1,17 +1,32 @@
 ﻿$(function() {
 
     // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-    function AppViewModel() {
-        this.firstName = "Bert";
-        this.lastName = "Bertington";
+    function AppViewModel(jsonModel) {
+        var self = this;
+        self.firstName = "Bert";
+        self.lastName = ko.observable("Bertington");
 
-        this.capitalizeLastName = function () {
-            var currentVal = this.lastName();        // Read the current value
-            this.lastName(currentVal.toUpperCase()); // Write back a modified value
+        //Do some fancy KO mapping
+
+        this.getGenresInDB = function () {
+            $(document).ready(function () {
+                // Send an AJAX request
+                $.getJSON('../api/genre')
+                    .done(function (data) {
+                        // On success, 'data' contains a list of products.
+                        $.each(data, function (key, item) {
+                            // Add a list item for the product.
+                            alert(item.Text);
+                            self.lastName(item.Text);
+                        });
+                    });
+            });
         };
+
+        this.getGenresInDB();
     }
 
     // Activates knockout.js
-    ko.applyBindings(new AppViewModel());
-
+    var vm = new AppViewModel(jsonModel);
+    ko.applyBindings(vm);
 });

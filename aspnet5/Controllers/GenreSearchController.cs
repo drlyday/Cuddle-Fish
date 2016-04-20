@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace aspnet5.Controllers
 {
-    public class GenreSearchController : ApiController
+    public class GenreController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

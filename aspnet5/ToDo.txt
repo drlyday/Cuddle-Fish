@@ -1,12 +1,14 @@
 ﻿Done:
 - Add MVC and integrate into Entity
 - Add Javascript file on load
+- - Web Api calls
 
 Standard Web functionality
+- KO mapping
 - parameterized Search post with independent LINQ query (30min)
 - Edit save edits to a table generated from a collection of objects with auto generated attributes.
 - Entity Framework Query style saving
-- Web Api calls
+
 - OO Javascript style inheritance (This)
 
 - Partial shared across view and edit
