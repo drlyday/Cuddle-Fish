@@ -15,12 +15,13 @@
 @using (Html.BeginForm())
 {
     <p>First name: <strong data-bind="text: lastName"></strong></p>
+    <p>selected: <strong data-bind="text: selectedStarRating"></strong></p>
 
 @Html.LabelFor(m => m.SelectedStarRating);
-@Html.DropDownListFor(m => m.SelectedStarRating, new SelectList(Model.StarRatings, "Value", "Text"), "your rating");
+@Html.DropDownListFor(m => m.SelectedStarRating, new SelectList(Model.StarRatings, "Value", "Text"), new { data_bind = "options: starRatings, optionsText: 'text', optionsValue: 'value', value: selectedStarRating" });
 <br/>
 @Html.LabelFor(m => m.SelectedGenre);
-@Html.DropDownListFor(m => m.SelectedGenre, new SelectList(Model.Genres, "Value", "Text"), "your rating");
+@Html.DropDownListFor(m => m.SelectedGenre, new SelectList(Model.Genres, "Value", "Text"), new { data_bind = "options: genres, optionsText: 'Text', optionsValue: 'Value', value: selectedGenre", });
 
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
@@ -76,12 +77,6 @@
     </table>
 }
 
-@section scripts
-{
-    var jsonModel = @(Html.ToJson(Model));
-}
-
 <script>
-    var jsonModel = @(Html.ToJson(Model))
-
+    var jsonModel = @(Html.ToJson(Model));
 </script>

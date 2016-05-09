@@ -27,7 +27,7 @@ namespace aspnet5.Controllers
         public ActionResult Index(MovieSearchViewModel vm)
         {
             var rating = Convert.ToInt16(vm.SelectedStarRating ?? 0);
-            vm.Movies = db.Movies.Where(m => m.StarRating == rating).ToList();
+            vm.Movies = db.Movies.Where(m => m.StarRating == rating && m.Genre == vm.SelectedGenre).ToList();
             return View(vm);
         }
 

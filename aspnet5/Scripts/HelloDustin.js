@@ -3,27 +3,41 @@
     // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
     function AppViewModel(jsonModel) {
         var self = this;
+        self.genres = ko.observable(jsonModel.genres);
+        self.starRatings = ko.observable(jsonModel.starRatings);
+
+        //self.selectedStarRating = ko.observable(jsonModel.selectedStarRating);
+        self.selectedStarRating = ko.observable(0);
+        self.selectedGenre = ko.observable(jsonModel.selectedGenre);
+
         self.firstName = "Bert";
-        self.lastName = ko.observable("Bertington");
-
+        self.lastName = ko.observable("Bertington") ;
+        
         //Do some fancy KO mapping
-
-        this.getGenresInDB = function () {
-            $(document).ready(function () {
-                // Send an AJAX request
-                $.getJSON('../api/genre')
+        var getGenresInDB = function (selectedStarRating) {
+            
+                // Send an AJAX requestselectedStarRatingselectedStarRatingselectedStarRating$L$.
+                $.getJSON('../api/genre',
+                    {
+                        data: { starRating: 1 }
+                    })
                     .done(function (data) {
+                        var options = new ko.observable(data)
+                        self.genres(data);
                         // On success, 'data' contains a list of products.
                         $.each(data, function (key, item) {
                             // Add a list item for the product.
-                            alert(item.Text);
-                            self.lastName(item.Text);
+                            
                         });
-                    });
-            });
+                });
         };
+        var sayHi = function () { alert('hi') }
 
-        this.getGenresInDB();
+        //self.selectedStarRating.subscribe(getGenresInDB);
+        self.selectedStarRating.subscribe(getGenresInDB);
+        //this.getGenresInDB();
+
+        self.selectedStarRating(1);
     }
 
     // Activates knockout.js

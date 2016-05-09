@@ -1,4 +1,5 @@
 ﻿using aspnet5.Models;
+using aspnet5.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +17,24 @@ namespace aspnet5.Controllers
         // GET api/<controller>
         public IEnumerable<SelectListItem> Get()
         {
+            var queryable = new MoviesQuery(db);
+            var genres = queryable.WhereRatingGreater(1).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
+            return genres;
+        }
 
-            List<SelectListItem> genres = db.Movies.Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre }).ToList();
+        // GET api/<controller>
+        public IEnumerable<SelectListItem> Get(int selectedStarRating)
+        {
+            var queryable = new MoviesQuery(db);
+            var genres = queryable.WhereRatingGreater(selectedStarRating).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
             return genres;
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST api/<controller>
         public void Post([FromBody]string value)
