@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Favorites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <folders>
+    <Folder>
+      <name>Add JS Library</name>
+      <folders />
+      <favorites>
+        <Favorite>
+          <name>_Layout.cshtml</name>
+          <path>aspnet5\Views\Shared\_Layout.cshtml</path>
+          <absolutePath>C:\Users\Dustin Lyday\OneDrive\Software Projects\aspnet5\aspnet5\Views\Shared\_Layout.cshtml</absolutePath>
+          <position>
+            <line>9</line>
+            <column>32</column>
+            <lineHash>BWpAQfj0Trruql7HtV3lUonaR2IuAmrNklrjncOU0jM=</lineHash>
+          </position>
+        </Favorite>
+        <Favorite>
+          <name>packages.config</name>
+          <path>aspnet5\packages.config</path>
+          <absolutePath>C:\Users\Dustin Lyday\OneDrive\Software Projects\aspnet5\aspnet5\packages.config</absolutePath>
+          <position>
+            <line>9</line>
+            <column>16</column>
+            <lineHash>/GPnwt2kHPyjMbm8a3smNTyZOcTzzPu06sm46cxPl2A=</lineHash>
+          </position>
+        </Favorite>
+        <Favorite>
+          <name>BundleConfig.cs</name>
+          <path>aspnet5\App_Start\BundleConfig.cs</path>
+          <absolutePath>C:\Users\Dustin Lyday\OneDrive\Software Projects\aspnet5\aspnet5\App_Start\BundleConfig.cs</absolutePath>
+          <position>
+            <line>17</line>
+            <column>53</column>
+            <lineHash>PxOQvC8/4o9HgZY3IIUCfkyaOCBroJ9cz1d5kFpx1gE=</lineHash>
+          </position>
+        </Favorite>
+      </favorites>
+    </Folder>
+  </folders>
+  <favorites />
+</Favorites>

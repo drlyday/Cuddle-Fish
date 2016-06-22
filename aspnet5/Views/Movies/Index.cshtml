@@ -17,66 +17,70 @@
     <p>First name: <strong data-bind="text: lastName"></strong></p>
     <p>selected: <strong data-bind="text: selectedStarRating"></strong></p>
 
-@Html.LabelFor(m => m.SelectedStarRating);
-@Html.DropDownListFor(m => m.SelectedStarRating, new SelectList(Model.StarRatings, "Value", "Text"), new { data_bind = "options: starRatings, optionsText: 'text', optionsValue: 'value', value: selectedStarRating" });
-<br/>
-@Html.LabelFor(m => m.SelectedGenre);
-@Html.DropDownListFor(m => m.SelectedGenre, new SelectList(Model.Genres, "Value", "Text"), new { data_bind = "options: genres, optionsText: 'Text', optionsValue: 'Value', value: selectedGenre", });
+    @Html.LabelFor(m => m.SelectedStarRating);
+    @Html.DropDownListFor(m => m.SelectedStarRating, new SelectList(Model.StarRatings, "Value", "Text"), new { data_bind = "options: starRatings, optionsText: 'text', optionsValue: 'value', value: selectedStarRating" });
+    <br/>
+    @Html.LabelFor(m => m.SelectedGenre);
+    @Html.DropDownListFor(m => m.SelectedGenre, new SelectList(Model.Genres, "Value", "Text"), new { data_bind = "options: genres, optionsText: 'Text', optionsValue: 'Value', value: selectedGenre", });
 
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Search" class="btn btn-default" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
     </div>
-</div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Movies[0].Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Movies[0].Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Movies[0].Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Movies[0].StarRating)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model.Movies)
-    {
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StarRating)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].StarRating)
+            </th>
+            <th></th>
         </tr>
-    }     
-    </table>
+
+        @foreach (var item in Model.Movies)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StarRating)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("EditSPA", "EditSPA", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }     
+        </table>
+
 }
 
+@Scripts.Render("~/Scripts/HelloDustin.js")
 <script>
     var jsonModel = @(Html.ToJson(Model));
 </script>
+

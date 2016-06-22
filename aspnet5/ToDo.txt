@@ -7,15 +7,18 @@
 - KO binding to select box
 - parameterized Search post 
 - Decoupled LINQ query (30min)
+- Observable triggers API call with parameter for filtering dropdowns
 
 Standard Web functionality
-- Observable triggers API call with parameter for filtering dropdowns
-- Load Database Enumeration
-- Details list saved information - 
-- Basic CSS styling with zurb foundation
 - Edit save edits to a table generated from a collection of objects with auto generated attributes.
+- use update mapping from knockout
 - Entity Framework Query style saving
+- Page Movies
+- Knockout javascript object mapping
 - OO Javascript style inheritance (This)
+- Load Database Enumeration
+- Details list saved information
+- Basic CSS styling with zurb foundation
 - Partial shared across view and edit
 
 EStream style improvements:

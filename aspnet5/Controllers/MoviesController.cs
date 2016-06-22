@@ -100,6 +100,42 @@ namespace aspnet5.Controllers
             return View(movie);
         }
 
+        // GET: Movies/EditAll
+        public ActionResult EditAll()
+        {
+            var vm = new EditAllMoviesViewModel();
+            vm.Movies = db.Movies.ToList();
+            return View(vm);
+        }
+
+        // GET: Movies/EditSpa
+        public ActionResult EditSPA()
+        {
+            var vm = new EditAllMoviesViewModel();
+            vm.Movies = db.Movies.ToList();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult EditAll(EditAllMoviesViewModel editAllMoviesViewModel)
+        {
+            var movies = editAllMoviesViewModel.Movies;
+            foreach(var movie in movies)
+            {
+                var existing = db.Movies.Where(m => m.ID == movie.ID).FirstOrDefault();
+                existing.Title = movie.Title;
+                existing.Genre = movie.Genre;
+                existing.ReleaseDate = movie.ReleaseDate;
+                existing.Price = movie.Price;
+                existing.StarRating = movie.StarRating;
+            }
+            db.SaveChanges();
+
+            var vm = new MovieSearchViewModel();
+            vm.Movies = db.Movies.ToList();
+            return RedirectToAction("Index");
+        }
+
         // GET: Movies/Delete/5
         public ActionResult Delete(int? id)
         {

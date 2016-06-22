@@ -11,8 +11,17 @@ namespace aspnet5
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/RequireJS").Include(
+                        "~/Scripts/RequireJS-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/knockoutjs").Include(
                         "~/Scripts/knockout-{version}.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/Knockout.Mapping").Include(
+                        "~/Scripts/knockout.mapping-latest.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/underscorejs").Include(
+                        "~/Scripts/underscore.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

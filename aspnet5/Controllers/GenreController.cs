@@ -23,7 +23,7 @@ namespace aspnet5.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<SelectListItem> Get(int selectedStarRating)
+        public IEnumerable<SelectListItem> ByStarRating(int selectedStarRating)
         {
             var queryable = new MoviesQuery(db);
             var genres = queryable.WhereRatingGreater(selectedStarRating).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });

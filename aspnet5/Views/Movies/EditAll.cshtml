@@ -1,0 +1,71 @@
+﻿@model aspnet5.ViewModels.EditAllMoviesViewModel
+@using aspnet5.Extensions;
+
+@{
+    ViewBag.Title = "EditAll";
+}
+@Scripts.Render("~/Scripts/EditAll.js")
+
+<h2>EditAll</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].StarRating)
+            </th>
+        </tr>
+
+    @foreach (var item in Model.Movies)
+    {
+        <tr>
+            <td>
+                @Html.Hidden("Movies[" + Model.Movies.IndexOf(item) + "][ID]", item.ID)
+                @Html.TextBox("Movies[" + Model.Movies.IndexOf(item) + "][Title]", item.Title)
+            </td>
+            <td>
+                @Html.TextBox("Movies[" + Model.Movies.IndexOf(item) + "][ReleaseDate]", item.ReleaseDate)
+            </td>
+            <td>
+                @Html.TextBox("Movies[" + Model.Movies.IndexOf(item) + "][Genre]", item.Genre)
+            </td>
+            <td>
+                @Html.TextBox("Movies[" + Model.Movies.IndexOf(item) + "][Price]", item.Price)
+            </td>
+            <td>
+                @Html.TextBox("Movies[" + Model.Movies.IndexOf(item) + "][StarRating]", item.StarRating)
+            </td>
+        </tr>
+    }
+
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}
+<script src="/Scripts/underscore.min.js"></script> 
+<script>
+
+    var jsonModel = @(Html.ToJson(Model));
+</script>

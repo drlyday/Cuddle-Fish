@@ -14,12 +14,12 @@
         self.lastName = ko.observable("Bertington") ;
         
         //Do some fancy KO mapping
-        var getGenresInDB = function (selectedStarRating) {
+        var getGenresInDB = function (rating) {
             
                 // Send an AJAX requestselectedStarRatingselectedStarRatingselectedStarRating$L$.
-                $.getJSON('../api/genre',
+            $.getJSON('../api/Genre/ByStarRating',
                     {
-                        data: { starRating: 1 }
+                        data: { selectedStarRating: self.selectedStarRating() }
                     })
                     .done(function (data) {
                         var options = new ko.observable(data)
@@ -37,7 +37,7 @@
         self.selectedStarRating.subscribe(getGenresInDB);
         //this.getGenresInDB();
 
-        self.selectedStarRating(1);
+        //  self.selectedStarRating(1);
     }
 
     // Activates knockout.js
