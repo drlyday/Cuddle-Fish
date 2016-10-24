@@ -8,13 +8,14 @@
 - parameterized Search post 
 - Decoupled LINQ query (30min)
 - Observable triggers API call with parameter for filtering dropdowns
+- Knockout javascript object mapping
 
 Standard Web functionality
+- Page loses selections after post
 - Edit save edits to a table generated from a collection of objects with auto generated attributes.
 - use update mapping from knockout
 - Entity Framework Query style saving
 - Page Movies
-- Knockout javascript object mapping
 - OO Javascript style inheritance (This)
 - Load Database Enumeration
 - Details list saved information
@@ -22,6 +23,7 @@ Standard Web functionality
 - Partial shared across view and edit
 
 EStream style improvements:
-- Add Helper so javascript is added like Estream
+- Page Controller Post Signature: bind collection from URI
+-  Add Helper so javascript is added like Estream
 - Javascript "This" type stuff
 - Javascript "This" or Object binding for context

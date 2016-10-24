@@ -31,6 +31,4 @@
     var vm = new AppViewModel(jsonModel);
 
     ko.applyBindings(vm);
-    
-    
 });
