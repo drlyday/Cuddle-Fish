@@ -12,12 +12,12 @@ namespace aspnet5.Areas.MovieStore.Controllers
 {
     public class MoviesController : BaseWebController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Movies
         public ActionResult Index()
         {
-            var vm = new MovieSearchViewModel {Movies = db.Movies.ToList()};
+            var vm = new MovieSearchViewModel {Movies = _db.Movies.ToList()};
             return View(vm);
         }
 
@@ -25,7 +25,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         public ActionResult Index(MovieSearchViewModel vm)
         {
             var rating = Convert.ToInt16(vm.SelectedStarRating ?? 0);
-            vm.Movies = db.Movies.Where(m => m.StarRating == rating && m.Genre == vm.SelectedGenre).ToList();
+            vm.Movies = _db.Movies.Where(m => m.StarRating == rating && m.Genre == vm.SelectedGenre).ToList();
             return View(vm);
         }
 
@@ -36,7 +36,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = _db.Movies.Find(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -59,8 +59,8 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Movies.Add(movie);
-                db.SaveChanges();
+                _db.Movies.Add(movie);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -74,7 +74,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = _db.Movies.Find(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -84,15 +84,16 @@ namespace aspnet5.Areas.MovieStore.Controllers
 
         // POST: Movies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // i.e.; public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public ActionResult Edit(Movie movie)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(movie).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(movie).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(movie);
@@ -102,7 +103,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         public ActionResult EditAll()
         {
             var vm = new EditAllMoviesViewModel();
-            vm.Movies = db.Movies.ToList();
+            vm.Movies = _db.Movies.ToList();
             return View(vm);
         }
 
@@ -110,8 +111,38 @@ namespace aspnet5.Areas.MovieStore.Controllers
         public ActionResult EditSPA()
         {
             var vm = new EditAllMoviesViewModel();
-            vm.Movies = db.Movies.ToList();
+            vm.Movies = _db.Movies.ToList();
             return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult EditSPA(EditAllMoviesViewModel editAllMoviesViewModel)
+        {
+            try
+            {
+                var movies = editAllMoviesViewModel.Movies;
+                foreach (var movie in movies)
+                {
+                    var existing = _db.Movies.FirstOrDefault(m => m.ID == movie.ID);
+                    if (existing != null)
+                    {
+                        existing.Title = movie.Title;
+                        existing.Genre = movie.Genre;
+                        existing.ReleaseDate = movie.ReleaseDate;
+                        existing.Price = movie.Price;
+                        existing.StarRating = movie.StarRating;
+                    }
+                }
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                OnException(ex, ex.Message);
+            }
+
+            var vm = new MovieSearchViewModel();
+            vm.Movies = _db.Movies.ToList();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -122,7 +153,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
                 var movies = editAllMoviesViewModel.Movies;
                 foreach (var movie in movies)
                 {
-                    var existing = db.Movies.FirstOrDefault(m => m.ID == movie.ID);
+                    var existing = _db.Movies.FirstOrDefault(m => m.ID == movie.ID);
                     if (existing != null)
                     {
                         existing.Title = movie.Title;
@@ -132,7 +163,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
                         existing.StarRating = movie.StarRating;
                     }
                 }
-                db.SaveChanges();
+                _db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -140,7 +171,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
             }
 
             var vm = new MovieSearchViewModel();
-            vm.Movies = db.Movies.ToList();
+            vm.Movies = _db.Movies.ToList();
             return RedirectToAction("Index");
         }
 
@@ -151,7 +182,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = _db.Movies.Find(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -168,9 +199,9 @@ namespace aspnet5.Areas.MovieStore.Controllers
             {
 
 
-                Movie movie = db.Movies.Find(id);
-                db.Movies.Remove(movie);
-                db.SaveChanges();
+                Movie movie = _db.Movies.Find(id);
+                _db.Movies.Remove(movie);
+                _db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -183,7 +214,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
