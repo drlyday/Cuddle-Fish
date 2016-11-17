@@ -15,14 +15,14 @@
         
         //Do some fancy KO mapping
         var getGenresInDB = function (rating) {
-            
+            //C:\Users\Dustin Lyday\OneDrive\Software Projects\aspnet5\aspnet5\MovieStore\Movies\Genre\ByStarRating
                 // Send an AJAX requestselectedStarRatingselectedStarRatingselectedStarRating$L$.
             $.getJSON('../api/Genre/ByStarRating',
                     {
                         data: { selectedStarRating: self.selectedStarRating() }
                     })
                     .done(function (data) {
-                        var options = new ko.observable(data)
+                    var options = new ko.observable(data);
                         self.genres(data);
                         // On success, 'data' contains a list of products.
                         $.each(data, function (key, item) {

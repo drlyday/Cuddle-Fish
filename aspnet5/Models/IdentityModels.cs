@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using aspnet5.Areas.MovieStore.Models.Movies;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -30,6 +31,6 @@ namespace aspnet5.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<aspnet5.Models.Movie> Movies { get; set; }
+        public System.Data.Entity.DbSet<Movie> Movies { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using aspnet5.ViewModels;
 
 namespace aspnet5.Controllers
 {
-    public class MoviesController : Controller
+    public class Movies2Controller : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

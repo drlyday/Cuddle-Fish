@@ -1,0 +1,10 @@
+﻿How do your pages reference Javascript Libs?
+- directly rendered in page: typically page specific .js files
+- via \Shared\_Layout.cs : typically all general js libraries for the application
+
+How do I get them?
+- javascrip nuget package manager?  I forgot but I used visual studio to help with javascript packages
+
+How do I integrate them in to VS?
+_references.js file integrates intellisense for Javascript.
+At the root of the Scripts folder lists all of the libraries and keeps them in sync...per the doc.

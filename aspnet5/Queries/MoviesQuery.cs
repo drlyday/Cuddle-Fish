@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using System.Linq.Expressions;
+using aspnet5.Areas.MovieStore.Models.Movies;
 
 namespace aspnet5.Queries
 {
@@ -24,9 +25,14 @@ namespace aspnet5.Queries
             return queryable.Where<Movie>(m => m.Price > 2);
         }
 
-        public IQueryable<Movie> WhereRatingGreater(int rating)
+        public IQueryable<Movie> WhereMovieRatingGreater(int rating)
         {
             return queryable.Where<Movie>(m => m.StarRating >= rating);
+        }
+
+        public IQueryable<Movie> WhereMovieRatingGreater(int[] ratings)
+        {
+            return queryable.Where<Movie>(m => ratings.Any(r => r >= m.StarRating));
         }
     }
 }

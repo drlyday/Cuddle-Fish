@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace aspnet5.Controllers
 {
-    public class GenreController : ApiController
+    public class Genre2Controller : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -18,7 +18,7 @@ namespace aspnet5.Controllers
         public IEnumerable<SelectListItem> Get()
         {
             var queryable = new MoviesQuery(db);
-            var genres = queryable.WhereRatingGreater(1).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
+            var genres = queryable.WhereMovieRatingGreater(1).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
             return genres;
         }
 
@@ -26,7 +26,16 @@ namespace aspnet5.Controllers
         public IEnumerable<SelectListItem> ByStarRating(int selectedStarRating)
         {
             var queryable = new MoviesQuery(db);
-            var genres = queryable.WhereRatingGreater(selectedStarRating).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
+            var genres = queryable.WhereMovieRatingGreater(selectedStarRating).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
+            return genres;
+        }
+
+        // GET api/<controller>
+        // If a collection of ratings needs to be sent [FromUri] is required.
+        public IEnumerable<SelectListItem> ByManyStarRating([FromUri]int[] selectedStarRating)
+        {
+            var queryable = new MoviesQuery(db);
+            var genres = queryable.WhereMovieRatingGreater(selectedStarRating).Select(m => new SelectListItem() { Text = m.Genre, Value = m.Genre });
             return genres;
         }
 

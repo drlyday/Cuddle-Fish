@@ -15,7 +15,7 @@
 
     // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
     function AppViewModel(jsonModel) {
-        var self = this;
+        //var self = this;
         
         var mapping = {
             'movies': {
