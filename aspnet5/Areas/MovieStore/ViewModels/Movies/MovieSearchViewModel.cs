@@ -13,12 +13,12 @@ namespace aspnet5.Areas.MovieStore.ViewModels
         {
             StarRatings.Add(new StarRating() { Value = 0, Text = "bleh 0" });
             StarRatings.Add(new StarRating() { Value = 1, Text = "ok 1" });
-            StarRatings.Add(new StarRating() { Value = 3, Text = "2" });
-            StarRatings.Add(new StarRating() { Value = 1, Text = "3" });
+            StarRatings.Add(new StarRating() { Value = 2, Text = "2" });
+            StarRatings.Add(new StarRating() { Value = 3, Text = "3" });
         }
 
         [Display(Name = "Rating")]
-        public Int16? SelectedStarRating { get; set; }
+        public short? SelectedStarRating { get; set; }
 
         [Display(Name = "Genre")]
         public string SelectedGenre { get; set; }

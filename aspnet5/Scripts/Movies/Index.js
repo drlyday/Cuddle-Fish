@@ -31,7 +31,6 @@
                         });
                 });
         };
-        var sayHi = function () { alert('hi') }
 
         //self.selectedStarRating.subscribe(getGenresInDB);
         self.selectedStarRating.subscribe(getGenresInDB);
