@@ -26,6 +26,9 @@ Standard Web functionality
 - Details list saved information
 - Basic CSS styling with zurb foundation
 - Partial shared across view and edit
+- Autofac dependency Injection
+- messaging enterprise
+- BUS NService Bus
 
 EStream style improvements:
 - Add Helper so javascript is added like Estream
@@ -38,3 +41,7 @@ Reading & Courses:
 - DDD Pluralsight
 - Front End Masters: Javascript, the good parts
 - Asp.Net book: my.safaribooksonline.com: phoebe, win3trip
+--Job req things to consider for growth
+	8 years of industry experience in a variety of contexts, during which youve built insanely scalable, robust, and fault-tolerant systems
+	Solid knowledge of the whole web stack (Front-End, Backend, Databases, Cache Layer, HTTP Protocol, TCP/IP, Linux, CPU Architecture, etc.
+	Design vision willing to help your team understand how individual implementations requirements beyond the written word
