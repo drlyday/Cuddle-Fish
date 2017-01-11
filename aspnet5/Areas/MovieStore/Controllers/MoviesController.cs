@@ -7,13 +7,19 @@ using aspnet5.Areas.MovieStore.Models;
 using aspnet5.Areas.MovieStore.Models.Movies;
 using aspnet5.Areas.MovieStore.ViewModels;
 using aspnet5.Areas.MovieStore.ViewModels.Movies;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace aspnet5.Areas.MovieStore.Controllers
 {
     public class MoviesController : BaseWebController
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db;
 
+        public MoviesController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+        
         // GET: Movies
         public ActionResult Index()
         {

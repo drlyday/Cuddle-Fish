@@ -9,7 +9,12 @@ namespace aspnet5.Areas.MovieStore.Controllers.Api
 {
     public class GenreController : ApiController
     {
-        private readonly ApplicationDbContext _db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db;
+
+        public GenreController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
 
         // GET api/<controller>
         public IEnumerable<SelectListItem> Get()
