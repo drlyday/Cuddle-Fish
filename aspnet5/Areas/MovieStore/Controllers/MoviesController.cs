@@ -7,6 +7,7 @@ using aspnet5.Areas.MovieStore.Models;
 using aspnet5.Areas.MovieStore.Models.Movies;
 using aspnet5.Areas.MovieStore.ViewModels;
 using aspnet5.Areas.MovieStore.ViewModels.Movies;
+using aspnet5.Plugins;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace aspnet5.Areas.MovieStore.Controllers
@@ -14,16 +15,19 @@ namespace aspnet5.Areas.MovieStore.Controllers
     public class MoviesController : BaseWebController
     {
         private readonly ApplicationDbContext _db;
+        private readonly IMovieFilter _filter;
 
-        public MoviesController(ApplicationDbContext db)
+        public MoviesController(ApplicationDbContext db, IMovieFilter filter)
         {
             _db = db;
+            _filter = filter;
         }
         
         // GET: Movies
         public ActionResult Index()
         {
-            var vm = new MovieSearchViewModel {Movies = _db.Movies.ToList()};
+            var list = _db.Movies.ToList().Where(m => !_filter.Filterout(m)).ToList();
+            var vm = new MovieSearchViewModel {Movies = list, FilterName = _filter.Name};
             return View(vm);
         }
 

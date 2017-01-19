@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using aspnet5.Areas.MovieStore.Models;
 using aspnet5.Controllers;
+using aspnet5.Plugins;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -38,6 +39,8 @@ namespace aspnet5
             // Register This applicatoin's resources
             builder.RegisterType<ApplicationDbContext>();
             //builder.RegisterType<ApplicationDbContext>().As<IdentityDbContext<ApplicationUser>>();
+
+            builder.RegisterModule(new ParentControlModule() { childAge = 5});
 
             // Set the dependency resolver to be Autofac.
             // MVC has DI concept backed in with IDependencyResolover: AutofacDependencyResolver is an implimentation

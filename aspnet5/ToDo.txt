@@ -13,7 +13,8 @@
 - Group Project into Areas
 - Page Controller Post Signature: bind collection from URI (controller implemented only)
 - integrate fa-fa icons
-- Injection Auto fac
+- IoC: Constructor Injection Auto fac
+- IoC: Module Injections Auto fac
 
 Standard Web functionality
 - Kendo grid integration
@@ -27,9 +28,9 @@ Standard Web functionality
 - Details list saved information
 - Basic CSS styling with zurb foundation
 - Partial shared across view and edit
-- Autofac dependency Injection
 - messaging enterprise
 - BUS NService Bus
+- Que MSMQ o RabbitMQ
 
 EStream style improvements:
 - Add Helper so javascript is added like Estream
@@ -37,6 +38,13 @@ EStream style improvements:
 - Javascript libs: noty, require, amplify, moment, garlic, 
 - Javascript knockout: Binding helpers= processing indicator, custom bindings
 - Javascript knockout: Validation helpers= processing indicator, spinner
+
+Server Side Functionality:
+- Big data
+- Parrallel processing
+- map reduce tech
+- Nservice bus
+- Network Computing
 
 Reading & Courses:
 - DDD Pluralsight

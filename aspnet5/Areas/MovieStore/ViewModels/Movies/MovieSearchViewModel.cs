@@ -27,6 +27,7 @@ namespace aspnet5.Areas.MovieStore.ViewModels.Movies
         public List<StarRating> StarRatings { get; set; } = new List<StarRating>();
 
         public List<SelectListItem> Genres { get; set; } = new List<SelectListItem>();
+        public string FilterName { get; set; }
     }
     public class StarRating
     {
