@@ -7,15 +7,12 @@ namespace workshop.migrations.Migrations
     {
         public override void Up()
         {
-            Create.Table("Member")
-                .WithColumn("memberId").AsInt32().PrimaryKey().Identity()
-                .WithColumn("Name").AsString(50)
-                .WithColumn("Address").AsString();
+            Execute.EmbeddedScript("Migration0000000StartHere.sql");
         }
 
         public override void Down()
         {
-            Delete.Table("Member");
+            Execute.EmbeddedScript("Migration0000000EndHere.sql");
         }
     }
 }
