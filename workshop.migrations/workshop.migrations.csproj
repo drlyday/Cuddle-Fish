@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Migration0119171640TestFwdOnly.cs" />
     <Compile Include="Migrations\Migration0119171604AddRating.cs" />
     <Compile Include="Migrations\M0001CreateMemberTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
