@@ -42,6 +42,7 @@ EStream style improvements:
 Server Side Functionality:
 - Big data
 - Parrallel processing
+- Distributed Computing
 - map reduce tech
 - Nservice bus
 - Network Computing

@@ -1,0 +1,107 @@
+[33mcommit 9ece701576e95bc56a9e8e067afb15133c48f78a[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Fri Jan 20 11:29:39 2017 -0600
+
+    Fluent Migrator: ROLLS BACK and Rebuilds FUlly.  no idea now to always build from scratch
+
+[33mcommit 28af69a94a46c832d09ec3e21879e4da4fe20bf4[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Fri Jan 20 08:11:47 2017 -0600
+
+    reanaming project
+
+[33mcommit 3189a8ac695d2276b5272808af78a14737edde80[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Jan 19 16:34:20 2017 -0600
+
+    Fluent Migrator: added to project to run database updates
+
+[33mcommit 5d09f9c3b815774eeeca2d70aa31aa04a55a317c[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Jan 19 12:27:49 2017 -0600
+
+    Auto Fac fixes
+
+[33mcommit 1963d230a043d4b9903fc37d548a76c2b2acb99d[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Wed Jan 11 13:51:12 2017 -0600
+
+    IoC container introduced with AutoFac
+
+[33mcommit dfef037abd1ed516294bf417bd4564390fea9f44[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Dec 29 07:22:00 2016 -0600
+
+    text updates to todo lists
+
+[33mcommit d7818c9f8015a202b2fd03970dfa665812be1616[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Tue Nov 22 16:58:59 2016 -0600
+
+    Create page has rating now
+
+[33mcommit d6772594f874808b1f9e6f85876dff84e05d7f29[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Nov 17 16:18:20 2016 -0600
+
+    SPA edit has been updated and Ratings added to Edit page
+
+[33mcommit 8d7e9b0776ea23d3d78a9abcb283c5a0058c41b4[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Nov 17 14:40:34 2016 -0600
+
+    tweaks
+
+[33mcommit dcab5167ab813e0f264616390d437ea557e08c7a[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Thu Nov 17 13:22:27 2016 -0600
+
+    Movie Store Project now uses Areas as a method for Logical seperation.
+
+[33mcommit f7a49cf69a1f54db7f467147a04f2336709f1814[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Mon Oct 24 11:16:59 2016 -0500
+
+    aligning javascript folder to match MVC section
+
+[33mcommit 4c4a4dc7762e543e3a0f208c0b9a61e3c27e9ac8[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Tue Jun 21 20:34:51 2016 -0500
+
+    Started SPA page with Knockout and Knockout Mapping
+
+[33mcommit 68764471c787432c45b0500f616070fb2db42285[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Mon May 9 11:10:54 2016 -0500
+
+    Select List is binding, notifying and a list of genres is pulled from the database. bam boom
+
+[33mcommit 8112e155de572d8735f9c4ce270ff53e52018d7d[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Wed Apr 20 17:04:12 2016 -0500
+
+    Knockout binding screen variable after a successful API call for data.
+
+[33mcommit 378b04ec95b654c3577e8216d7b22ed7722eab48[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Tue Apr 19 18:48:11 2016 -0500
+
+    wired in knockoutjs
+
+[33mcommit 2f9f88ba3ad597f58129b7fdd7aad4a11b1c01f3[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Tue Apr 19 18:04:53 2016 -0500
+
+    added knockoutjs reference
+
+[33mcommit 4791c6311257a56f14d078a3b02dd6079f50021f[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Tue Apr 19 17:58:01 2016 -0500
+
+    Searching with Post to Index action on controller
+
+[33mcommit b0adfaf828e33562addf360c81d8f4b94fbab324[m
+Author: lyday <dustin.lyday@gmail.com>
+Date:   Mon Apr 11 14:33:55 2016 -0500
+
+    Initial commit to add default .gitIgnore and .gitAttribute files.

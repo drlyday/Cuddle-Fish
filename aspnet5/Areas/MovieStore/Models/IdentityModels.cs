@@ -18,16 +18,15 @@ namespace aspnet5.Areas.MovieStore.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class MovieStoreDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public MovieStoreDbContext(): base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static MovieStoreDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new MovieStoreDbContext();
         }
 
         public System.Data.Entity.DbSet<Movie> Movies { get; set; }

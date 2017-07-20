@@ -6,10 +6,10 @@ namespace aspnet5.Areas.MovieStore.Queries
 {
     public class MoviesQuery 
     {
-        ApplicationDbContext db;
+        MovieStoreDbContext db;
         IQueryable<Movie> queryable;
 
-        public MoviesQuery(ApplicationDbContext _db)
+        public MoviesQuery(MovieStoreDbContext _db)
         {
             db = _db;
             queryable = db.Movies;

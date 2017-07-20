@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using aspnet5.Areas.MovieStore.Models;
+using aspnet5.Areas.MovieStore.ModuleRegistration;
 using aspnet5.Controllers;
-using aspnet5.Plugins;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -14,8 +14,7 @@ namespace aspnet5
         {
             var builder = new ContainerBuilder();
 
-            // Register your MVC controllers. (MvcApplication is the name of
-            // the class in Global.asax.)
+            // Register your MVC controllers. (MvcApplication is the name of the class in Global.asax.)
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             // ...or you can register individual controlllers manually.
             builder.RegisterType<HomeController>().InstancePerRequest();
@@ -37,8 +36,9 @@ namespace aspnet5
             //builder.InjectActionInvoker();
 
             // Register This applicatoin's resources
-            builder.RegisterType<ApplicationDbContext>();
-            //builder.RegisterType<ApplicationDbContext>().As<IdentityDbContext<ApplicationUser>>();
+            //  - Movie Store Database Context for EF
+            builder.RegisterType<MovieStoreDbContext>();
+            //builder.RegisterType<MovieStoreDbContext>().As<IdentityDbContext<ApplicationUser>>();
 
             builder.RegisterModule(new ParentControlModule() { childAge = 5});
 

@@ -3,21 +3,21 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using aspnet5.Areas.MovieStore.Filters;
 using aspnet5.Areas.MovieStore.Models;
 using aspnet5.Areas.MovieStore.Models.Movies;
 using aspnet5.Areas.MovieStore.ViewModels;
 using aspnet5.Areas.MovieStore.ViewModels.Movies;
-using aspnet5.Plugins;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace aspnet5.Areas.MovieStore.Controllers
 {
     public class MoviesController : BaseWebController
     {
-        private readonly ApplicationDbContext _db;
+        private readonly MovieStoreDbContext _db;
         private readonly IMovieFilter _filter;
 
-        public MoviesController(ApplicationDbContext db, IMovieFilter filter)
+        public MoviesController(MovieStoreDbContext db, IMovieFilter filter)
         {
             _db = db;
             _filter = filter;
@@ -228,40 +228,5 @@ namespace aspnet5.Areas.MovieStore.Controllers
             }
             base.Dispose(disposing);
         }
-    }
-
-    public class BaseWebController : Controller
-    {
-        //todo inject
-
-        public ActionResult OnException(Exception ex, string errorMessage )
-        {
-            //Logger Error
-
-            if (ex != null)
-            {
-                ModelState.AddModelError("BaseExceptionCollection", ex.Message);
-            }
-
-            return TryRedirectToReferrer();
-        }
-
-        private ActionResult TryRedirectToReferrer()
-        {
-            return Request.UrlReferrer == null ? null : new RedirectResult(Request.UrlReferrer.ToString());
-        }
-
-        public ActionResult OnException(Exception ex, string errorMessage, Func<ActionResult> action )
-        {
-            //Logger Error
-
-            if (ex != null)
-            {
-                ModelState.AddModelError("BaseExceptionCollection", ex.Message);
-            }
-
-            return action();
-        }
-
     }
 }

@@ -7,9 +7,9 @@
         // todo: add custom properties
         this.funkyName = 'Funky ' + this.title();
 
-        this.deleteRow = (function (root) {
+        this.deleteRow = (function(root) {
             root.movies.remove(this);
-        })
+        });
     }
 
 

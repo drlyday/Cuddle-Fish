@@ -9,9 +9,9 @@ namespace aspnet5.Areas.MovieStore.Controllers.Api
 {
     public class GenreController : ApiController
     {
-        private readonly ApplicationDbContext _db;
+        private readonly MovieStoreDbContext _db;
 
-        public GenreController(ApplicationDbContext db)
+        public GenreController(MovieStoreDbContext db)
         {
             _db = db;
         }
