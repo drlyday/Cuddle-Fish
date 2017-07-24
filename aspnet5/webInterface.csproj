@@ -221,22 +221,9 @@
     <Compile Include="Areas\MovieStore\Controllers\ManageController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\MoviesController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\TEstController.cs" />
-    <Compile Include="Areas\MovieStore\Filters\IFilterRules.cs" />
-    <Compile Include="Areas\MovieStore\Filters\IMovieFilter.cs" />
-    <Compile Include="Areas\MovieStore\Filters\LittleKidRules.cs" />
-    <Compile Include="Areas\MovieStore\Filters\MovieFilter.cs" />
-    <Compile Include="Areas\MovieStore\Filters\NoRules.cs" />
-    <Compile Include="Areas\MovieStore\Filters\TeenagerRules.cs" />
-    <Compile Include="Areas\MovieStore\Models\Genres.cs" />
-    <Compile Include="Areas\MovieStore\ModuleRegistration\ParentControlModule.cs" />
-    <Compile Include="Areas\MovieStore\Validations\FutureDateAttribute.cs" />
-    <Compile Include="Areas\MovieStore\Validations\PastDateAttribute.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\EditAllMoviesViewModel.cs" />
-    <Compile Include="Areas\MovieStore\Models\IdentityModels.cs" />
-    <Compile Include="Areas\MovieStore\Models\Movies\Movie.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\MovieSearchViewModel.cs" />
     <Compile Include="Areas\MovieStore\MoviesAreaRegistration.cs" />
-    <Compile Include="Areas\MovieStore\Queries\MoviesQuery.cs" />
     <Compile Include="AutofacConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -827,6 +814,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieStore\MovieStore.csproj">
+      <Project>{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}</Project>
+      <Name>MovieStore</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,4 @@
-﻿namespace aspnet5.Areas.MovieStore.Models
+﻿namespace MovieStore.Models
 {
     public static class Genres
     {

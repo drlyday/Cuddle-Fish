@@ -1,6 +1,6 @@
-﻿using aspnet5.Areas.MovieStore.Models;
+﻿using MovieStore.Models;
 
-namespace aspnet5.Areas.MovieStore.Filters
+namespace MovieStore.Filters
 {
     public class TeenagerRules : IFilterRules
     {
@@ -10,9 +10,6 @@ namespace aspnet5.Areas.MovieStore.Filters
             return filterOut;
         }
 
-        public string Name
-        {
-            get { return "Teenager Rules"; }
-        }
+        public string Name => "Teenager Rules";
     }
 }

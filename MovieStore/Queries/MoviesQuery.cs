@@ -1,8 +1,7 @@
-﻿using aspnet5.Areas.MovieStore.Models;
-using System.Linq;
-using aspnet5.Areas.MovieStore.Models.Movies;
+﻿using System.Linq;
+using MovieStore.Models.Movies;
 
-namespace aspnet5.Areas.MovieStore.Queries
+namespace MovieStore.Queries
 {
     public class MoviesQuery 
     {

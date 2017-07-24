@@ -1,4 +1,4 @@
-﻿namespace aspnet5.Areas.MovieStore.Filters
+﻿namespace MovieStore.Filters
 {
     public interface IFilterRules
     {

@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Web.Http;
 using System.Web.Mvc;
-using aspnet5.Areas.MovieStore.Models;
-using aspnet5.Areas.MovieStore.Queries;
+using MovieStore;
+using MovieStore.Queries;
 
 namespace aspnet5.Areas.MovieStore.Controllers.Api
 {

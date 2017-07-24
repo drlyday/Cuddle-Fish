@@ -1,6 +1,6 @@
-﻿using aspnet5.Areas.MovieStore.Models;
+﻿using MovieStore.Models;
 
-namespace aspnet5.Areas.MovieStore.Filters
+namespace MovieStore.Filters
 {
     public class LittleKidRules : IFilterRules
     {

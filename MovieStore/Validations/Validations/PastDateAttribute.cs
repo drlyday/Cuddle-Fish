@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace aspnet5.Areas.MovieStore.Validations
+namespace MovieStore.Validations.Validations
 {
     public class PastDateAttribute : RequiredAttribute
     {

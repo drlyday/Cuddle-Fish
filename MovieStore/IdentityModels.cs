@@ -1,10 +1,12 @@
-﻿using System.Security.Claims;
+﻿using System;
+using System.Diagnostics;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using aspnet5.Areas.MovieStore.Models.Movies;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MovieStore.Models.Movies;
 
-namespace aspnet5.Areas.MovieStore.Models
+namespace MovieStore
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -22,6 +24,10 @@ namespace aspnet5.Areas.MovieStore.Models
     {
         public MovieStoreDbContext(): base("DefaultConnection", throwIfV1Schema: false)
         {
+            // print the query to the Debugging window
+            Database.Log = (query) => { Debug.WriteLine((string) query); };
+            // print the query to the Console
+            Database.Log = Console.WriteLine;
         }
 
         public static MovieStoreDbContext Create()

@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using aspnet5.Areas.MovieStore.Models.Movies;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MovieStore.Models.Movies;
 
 namespace aspnet5.Models
 {

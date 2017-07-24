@@ -5,13 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using System.Linq.Expressions;
-using aspnet5.Areas.MovieStore.Models.Movies;
+using MovieStore.Models.Movies;
 
 namespace aspnet5.Queries
 {
     public class MoviesQuery 
     {
-        ApplicationDbContext db;
+        private ApplicationDbContext db;
         IQueryable<Movie> queryable;
 
         public MoviesQuery(ApplicationDbContext _db)

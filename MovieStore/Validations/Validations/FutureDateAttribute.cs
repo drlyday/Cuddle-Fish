@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using ModelValidation.Infrastructure;
 
-namespace ModelValidation.Infrastructure
+namespace MovieStore.Validations.Validations
 {
     public class FutureDateAttribute : RequiredAttribute
     {

@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
-using aspnet5.Areas.MovieStore.Models;
-using aspnet5.Areas.MovieStore.ModuleRegistration;
 using aspnet5.Controllers;
 using Autofac;
 using Autofac.Integration.Mvc;
-using Microsoft.AspNet.Identity.EntityFramework;
+using MovieStore;
+using MovieStore.Handlers;
+using MovieStore.ModuleRegistration;
 
 namespace aspnet5
 {
@@ -16,7 +16,12 @@ namespace aspnet5
 
             // Register your MVC controllers. (MvcApplication is the name of the class in Global.asax.)
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            // ...or you can register individual controlllers manually.
+
+            builder.RegisterAssemblyTypes(typeof(MessageHandler<>).Assembly)
+                .Where(x => x.Name.EndsWith("SaleHandler"))
+                .AsImplementedInterfaces();
+
+            // ...or you can register individual controllers manually.
             builder.RegisterType<HomeController>().InstancePerRequest();
 
             // OPTIONAL: Register model binders that require DI.

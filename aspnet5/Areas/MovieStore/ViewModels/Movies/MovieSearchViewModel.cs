@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using aspnet5.Areas.MovieStore.Models.Movies;
+using MovieStore.Models.Movies;
 
 namespace aspnet5.Areas.MovieStore.ViewModels.Movies
 {

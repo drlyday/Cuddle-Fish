@@ -115,9 +115,9 @@
     <None Include="Scripts\jquery-3.1.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\aspnet5\workshop.csproj">
+    <ProjectReference Include="..\aspnet5\webInterface.csproj">
       <Project>{100FDC41-6B2A-4984-A0B1-9B593374F360}</Project>
-      <Name>workshop</Name>
+      <Name>webInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

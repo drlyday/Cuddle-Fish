@@ -1,7 +1,7 @@
-﻿using aspnet5.Areas.MovieStore.Filters;
-using Autofac;
+﻿using Autofac;
+using MovieStore.Filters;
 
-namespace aspnet5.Areas.MovieStore.ModuleRegistration
+namespace MovieStore.ModuleRegistration
 {
     public class ParentControlModule : Module
     {

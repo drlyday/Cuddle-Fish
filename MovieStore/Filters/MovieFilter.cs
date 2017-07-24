@@ -1,6 +1,6 @@
-﻿using aspnet5.Areas.MovieStore.Models.Movies;
+﻿using MovieStore.Models.Movies;
 
-namespace aspnet5.Areas.MovieStore.Filters
+namespace MovieStore.Filters
 {
     public class MovieFilter : IMovieFilter
     {

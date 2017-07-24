@@ -3,22 +3,24 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using aspnet5.Areas.MovieStore.Filters;
-using aspnet5.Areas.MovieStore.Models;
-using aspnet5.Areas.MovieStore.Models.Movies;
-using aspnet5.Areas.MovieStore.ViewModels;
 using aspnet5.Areas.MovieStore.ViewModels.Movies;
-using Microsoft.AspNet.Identity.EntityFramework;
+using MovieStore;
+using MovieStore.Filters;
+using MovieStore.Handlers;
+using MovieStore.Models.Movies;
+using MovieStore.Transitions;
 
 namespace aspnet5.Areas.MovieStore.Controllers
 {
     public class MoviesController : BaseWebController
     {
+        private readonly DynamicHandler _handler;
         private readonly MovieStoreDbContext _db;
         private readonly IMovieFilter _filter;
 
-        public MoviesController(MovieStoreDbContext db, IMovieFilter filter)
+        public MoviesController(DynamicHandler handler, MovieStoreDbContext db, IMovieFilter filter)
         {
+            _handler = handler;
             _db = db;
             _filter = filter;
         }
@@ -102,8 +104,10 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Abstract this into a handler
                 _db.Entry(movie).State = EntityState.Modified;
                 _db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(movie);
@@ -130,20 +134,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             try
             {
-                var movies = editAllMoviesViewModel.Movies;
-                foreach (var movie in movies)
-                {
-                    var existing = _db.Movies.FirstOrDefault(m => m.ID == movie.ID);
-                    if (existing != null)
-                    {
-                        existing.Title = movie.Title;
-                        existing.Genre = movie.Genre;
-                        existing.ReleaseDate = movie.ReleaseDate;
-                        existing.Price = movie.Price;
-                        existing.StarRating = movie.StarRating;
-                    }
-                }
-                _db.SaveChanges();
+                
             }
             catch (Exception ex)
             {

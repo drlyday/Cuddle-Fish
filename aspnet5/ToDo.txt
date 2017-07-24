@@ -46,6 +46,7 @@ Server Side Functionality:
 - map reduce tech
 - Nservice bus
 - Network Computing
+- IOC Routing
 
 Reading & Courses:
 - DDD Pluralsight

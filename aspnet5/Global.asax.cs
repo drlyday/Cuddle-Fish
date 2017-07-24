@@ -6,7 +6,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using aspnet5.Areas.MovieStore.Models;
 using aspnet5.Controllers;
 using Autofac;
 using Autofac.Integration.Mvc;

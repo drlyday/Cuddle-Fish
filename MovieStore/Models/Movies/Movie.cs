@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using aspnet5.Areas.MovieStore.Validations;
-using Microsoft.Ajax.Utilities;
-using ModelValidation.Infrastructure;
+using MovieStore.Validations.Validations;
 
-namespace aspnet5.Areas.MovieStore.Models.Movies
+namespace MovieStore.Models.Movies
 {
     public class Movie : IValidatableObject
     {
@@ -19,6 +17,7 @@ namespace aspnet5.Areas.MovieStore.Models.Movies
         public decimal Price { get; set; }
 //        [Required(ErrorMessage = "What is your Rating?")]
         public short? StarRating { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var errors = new List<ValidationResult>();
