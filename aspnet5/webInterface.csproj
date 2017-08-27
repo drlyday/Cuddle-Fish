@@ -216,11 +216,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\MovieStore\Controllers\AccountController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\Api\GenreController.cs" />
+    <Compile Include="Areas\MovieStore\Controllers\AuthController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\BaseWebController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\HomeController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\ManageController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\MoviesController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\TEstController.cs" />
+    <Compile Include="Areas\MovieStore\Models\LoginModel.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\EditAllMoviesViewModel.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\MovieSearchViewModel.cs" />
     <Compile Include="Areas\MovieStore\MoviesAreaRegistration.cs" />
@@ -357,6 +359,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\foundation.js" />
     <Content Include="Scripts\foundation.min.js" />
+    <Content Include="Areas\MovieStore\Views\Auth\Auth.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

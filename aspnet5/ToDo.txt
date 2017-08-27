@@ -17,6 +17,7 @@
 - IoC: Module Injections Auto fac
 
 Standard Web functionality
+- Cookie based authentication: https://app.pluralsight.com/player?course=owin-katana-understanding&author=chris-klug&name=owin-katana-understanding-m5&clip=2&mode=live
 - Kendo grid integration
 - Page loses selections after post
 - Edit save edits to a table generated from a collection of objects with auto generated attributes.

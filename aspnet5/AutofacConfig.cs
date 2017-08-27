@@ -3,8 +3,10 @@ using aspnet5.Controllers;
 using Autofac;
 using Autofac.Integration.Mvc;
 using MovieStore;
+using MovieStore.Filters;
 using MovieStore.Handlers;
 using MovieStore.ModuleRegistration;
+using MovieStore.Transitions;
 
 namespace aspnet5
 {
@@ -45,6 +47,15 @@ namespace aspnet5
             builder.RegisterType<MovieStoreDbContext>();
             //builder.RegisterType<MovieStoreDbContext>().As<IdentityDbContext<ApplicationUser>>();
 
+            // Custom class registrations
+            builder.RegisterType<DynamicHandler>();
+            builder.RegisterType<EditMovieHandler>().As<MessageHandler<EditMoviesTransition>>();
+            builder.RegisterType<TeenagerRules>().As<IFilterRules>();
+            builder.RegisterType<LittleKidRules>().As<IFilterRules>();
+            builder.RegisterType<MovieFilter>().As<IMovieFilter>();
+
+            // AutoFac Module Registration
+            // WTF: A module is a grouping of registrations.  This one has the parent controls.
             builder.RegisterModule(new ParentControlModule() { childAge = 5});
 
             // Set the dependency resolver to be Autofac.

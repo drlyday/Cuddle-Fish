@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -104,9 +105,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Abstract this into a handler
-                _db.Entry(movie).State = EntityState.Modified;
-                _db.SaveChanges();
+                _handler.Handle(new EditMoviesTransition(new List<Movie>{ movie }));
 
                 return RedirectToAction("Index");
             }
@@ -134,15 +133,14 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             try
             {
-                
+                var movies = editAllMoviesViewModel.Movies;
+                _handler.Handle(new EditMoviesTransition(movies));
             }
             catch (Exception ex)
             {
                 OnException(ex, ex.Message);
             }
-
-            var vm = new MovieSearchViewModel();
-            vm.Movies = _db.Movies.ToList();
+            
             return RedirectToAction("Index");
         }
 
@@ -151,28 +149,14 @@ namespace aspnet5.Areas.MovieStore.Controllers
         {
             try
             {
-                var movies = editAllMoviesViewModel.Movies;
-                foreach (var movie in movies)
-                {
-                    var existing = _db.Movies.FirstOrDefault(m => m.ID == movie.ID);
-                    if (existing != null)
-                    {
-                        existing.Title = movie.Title;
-                        existing.Genre = movie.Genre;
-                        existing.ReleaseDate = movie.ReleaseDate;
-                        existing.Price = movie.Price;
-                        existing.StarRating = movie.StarRating;
-                    }
-                }
-                _db.SaveChanges();
+                 var movies = editAllMoviesViewModel.Movies;
+                _handler.Handle(new EditMoviesTransition( movies ));
             }
             catch (Exception ex)
             {
                 OnException(ex, ex.Message);
             }
-
-            var vm = new MovieSearchViewModel();
-            vm.Movies = _db.Movies.ToList();
+            
             return RedirectToAction("Index");
         }
 

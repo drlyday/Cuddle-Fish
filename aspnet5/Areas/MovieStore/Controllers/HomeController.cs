@@ -9,9 +9,10 @@ namespace aspnet5.MovieStore.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Congrates, you successfully got through COOKIE AUTHENTICATION!.";
 
             return View();
         }

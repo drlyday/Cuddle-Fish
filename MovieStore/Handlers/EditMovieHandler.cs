@@ -8,7 +8,7 @@ using MovieStore.Transitions;
 
 namespace MovieStore.Handlers
 {
-    class EditMovieHandler : MessageHandler<EditMoviesTransition>
+    public class EditMovieHandler : MessageHandler<EditMoviesTransition>
     {
         private readonly MovieStoreDbContext _db;
         private readonly IMovieFilter _filter;
@@ -21,7 +21,6 @@ namespace MovieStore.Handlers
         protected override void InnerHandle(EditMoviesTransition message)
         {
             var movies = message.Movies;
-            var transition = new EditMoviesTransition(movies);
             
             foreach (var movie in movies)
             {

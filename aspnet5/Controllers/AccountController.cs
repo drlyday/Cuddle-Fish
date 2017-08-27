@@ -53,7 +53,7 @@ namespace aspnet5.Controllers
         }
 
         //
-        // GET: /Account/Login
+        // GET: /Account/LoginModel
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -62,7 +62,7 @@ namespace aspnet5.Controllers
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Account/LoginModel
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
