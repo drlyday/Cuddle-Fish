@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreWebsiteMVC", "MovieStoreWebsiteMVC\MovieStoreWebsiteMVC.csproj", "{100FDC41-6B2A-4984-A0B1-9B593374F360}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuttlefishHost", "PDMAdmin\CuttlefishHost.csproj", "{DA0558F5-F5FE-4A12-9423-EA0F78E0947A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomainTests", "MovieStoreDomainTests\MovieStoreDomainTests.csproj", "{A86A1C8E-B152-4273-83DA-4ADDEDD89AEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreWebsiteMVC", "..\..\aspnet5\aspnet5\MovieStoreWebsiteMVC.csproj", "{100FDC41-6B2A-4984-A0B1-9B593374F360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "workshop.migrations\Migrations.csproj", "{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop.tests", "..\..\aspnet5\aspnet5.Tests\workshop.tests.csproj", "{A86A1C8E-B152-4273-83DA-4ADDEDD89AEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Accounting\Infrastructure.csproj", "{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop.migrations", "..\..\aspnet5\workshop.migrations\workshop.migrations.csproj", "{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomain", "MovieStoreDomain\MovieStoreDomain.csproj", "{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\..\aspnet5\Accounting\Infrastructure.csproj", "{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuttlefishHost", "CuttleFishHost\CuddleFishHost\CuttlefishHost.csproj", "{88D8BB9E-B9BD-4291-B13A-5C033267D080}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomain", "..\..\aspnet5\MovieStore\MovieStoreDomain.csproj", "{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishCliConsole", "CuddleFish\CuddleFishCliConsole.csproj", "{3FB916F7-07BE-4924-BCCE-1496ADE661FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessServicesWebApi", "..\..\aspnet5\BusinessServicesWebApi\BusinessServicesWebApi.csproj", "{0BA61F48-CF34-4349-B85F-1E109B72BFA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +23,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA0558F5-F5FE-4A12-9423-EA0F78E0947A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0558F5-F5FE-4A12-9423-EA0F78E0947A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0558F5-F5FE-4A12-9423-EA0F78E0947A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0558F5-F5FE-4A12-9423-EA0F78E0947A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{100FDC41-6B2A-4984-A0B1-9B593374F360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{100FDC41-6B2A-4984-A0B1-9B593374F360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{100FDC41-6B2A-4984-A0B1-9B593374F360}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,19 +47,15 @@ Global
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88D8BB9E-B9BD-4291-B13A-5C033267D080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88D8BB9E-B9BD-4291-B13A-5C033267D080}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88D8BB9E-B9BD-4291-B13A-5C033267D080}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88D8BB9E-B9BD-4291-B13A-5C033267D080}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FB916F7-07BE-4924-BCCE-1496ADE661FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FB916F7-07BE-4924-BCCE-1496ADE661FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FB916F7-07BE-4924-BCCE-1496ADE661FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FB916F7-07BE-4924-BCCE-1496ADE661FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA61F48-CF34-4349-B85F-1E109B72BFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA61F48-CF34-4349-B85F-1E109B72BFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA61F48-CF34-4349-B85F-1E109B72BFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA61F48-CF34-4349-B85F-1E109B72BFA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E96EC8DA-4C64-42B2-962E-247023EF2947}
+		SolutionGuid = {D3AED81B-D809-4356-BBC3-02C65E105C33}
 	EndGlobalSection
 EndGlobal

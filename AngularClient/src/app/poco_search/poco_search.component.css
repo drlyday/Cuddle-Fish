@@ -1,0 +1,41 @@
+﻿:host { }
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-90-width {
+    width: 10%;
+}
+.example-25pct-width{
+    width: 25%;
+}
+
+.example-content-width{
+    width: max-content;
+}
+
+/* .example-icon {
+    padding: 10px 14px;
+} */
+
+.example-spacer {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -o-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.row-full{
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: 100px;
+  margin-top: 100px;
+  left: 50%;
+ }

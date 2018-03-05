@@ -1,0 +1,49 @@
+﻿:host { }
+.example-spacer {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  -o-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.header{
+  width: 30px;
+  text-overflow: fade(5%);
+}
+.example-full-width {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.row-full{
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: 100px;
+  margin-top: 100px;
+  left: 50%;
+ }
+
+ p {
+  width: 70%;
+  padding: 2px 5px;
+
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+
+md-menu-item {
+  z-index: 100;
+}
+
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

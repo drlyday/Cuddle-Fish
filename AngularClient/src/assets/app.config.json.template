@@ -1,0 +1,6 @@
+{
+    "clientId" : "${Client.Id}",
+    "authSvcUrl": "${AuthSvc.Url}",
+    "endpointSvcUrl": "${EndpointSvc.Url}",
+    "version": "To-Be-Replaced-During-Build"
+}

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<templateInfo xmlns="http://nagp.ist.am.bp.com/ProcessTemplates.xsd">
+
+  <file path="assets/app.config.json.template">
+    <package name="PDMAdminUI" >
+      <output path="wwwroot/assets/app.config.json"/>
+    </package>
+    <token name="Client.Id">
+     <default>pdm-svcs</default>
+    </token>
+    <token name="AuthSvc.Url">
+      <default>https://${AuthSvc.DnsAlias}/sso/authenticate</default>
+    </token>
+    <token name="EndpointSvc.Url">
+      <default>http://${PDMSvcs.DnsAlias}:${PDMSvcs.PortNumber}/api/ui/endpoints</default>
+    </token>
+
+    <!-- Keep in sync with other PDM-Svcs and Auth-Svcs tokens  -->
+    <token name="AuthSvc.DnsAlias">
+      <default>${AuthEc2DnsAlias}</default>
+    </token>
+    <token name="PDMSvcs.DnsAlias">
+      <default>${PdmEc2DnsAlias}</default>
+    </token>
+    <token name="PDMSvcs.PortNumber">
+      <default>9002</default>
+    </token>
+    <token name="PdmEc2DnsAlias">
+	    <default>localhost</default>
+      <env name="DEVA">pdm-ec2-deva-01.cd2.bp.com</env>
+      <env name="INTA">pdm-ec2-inta-02.cd2.bp.com</env>
+      <env name="TESTA">pdm-ec2-tsta-02.cd2.bp.com</env>
+      <env name="Prod">pdm-ec2-prd-02.cd2.bp.com</env>
+      <env name="DR">pdm-ec2-prd-02.cd2.bp.com</env>
+    </token>
+    </token>
+    <token name="AuthEc2DnsAlias">
+	    <default>localhost</default>
+      <env name="DEVA">pdm-ec2-deva-02.cd2.bp.com</env>
+      <env name="INTA">pdm-ec2-inta-01.cd2.bp.com</env>
+      <env name="TESTA">pdm-ec2-tsta-01.cd2.bp.com</env>
+      <env name="Prod">pdm-ec2-prd-01.cd2.bp.com</env>
+      <env name="DR">pdm-ec2-prd-01.cd1.bp.com</env>
+    </token>
+  </file>
+
+  <environments>
+    <env>_BLANK_</env>
+    <env>LOCAL</env>
+    <env>DEVA</env>
+    <env>INTA</env>
+    <env>TESTA</env>
+    <env>PROD</env>
+    <env>DR</env>
+  </environments>
+</templateInfo>

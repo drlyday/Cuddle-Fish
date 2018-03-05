@@ -1,0 +1,46 @@
+﻿
+
+<div *ngIf="questions == undefined">
+  <mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="questions">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-toolbar color="secondary">
+          <mat-icon matTooltip="Create" class="example-icon"><i class="material-icons">&#xE145;</i></mat-icon>
+          <p class="overflow-ellipsis">{{getHeader()}}</p>
+          <!-- <div>{{getDescription()}}</div> -->
+          <span class="example-spacer"></span>
+          <div class="button-row">
+            <button mat-mini-fab class="example-icon" (click)="onSearch(); $event.stopPropagation()">
+              <mat-icon matTooltip="Search" class="example-icon"><i class="material-icons">&#xE8B6;</i></mat-icon>
+            </button>
+            <button mat-mini-fab *ngIf="showActionOptions()" color="secondary" class="example-icon basicpad" [mat-menu-trigger-for]="menu">
+              <mat-icon matTooltip="Actions..."><i class="material-icons">&#xE5D4;</i></mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-button class="example-full-width" (click)="onReset()">
+                <mat-icon matTooltip="Reset" class="example-icon"><i class="material-icons">&#xE166;</i></mat-icon>              
+                <span>Reset</span>
+              </button>
+              <button mat-button class="example-full-width" (click)="onCancel()">
+                <mat-icon matTooltip="Cancel" class="example-icon"><i class="material-icons">&#xE5C9;</i></mat-icon>              
+                <span>Cancel</span>
+              </button>
+            </mat-menu>
+          </div>
+      </mat-toolbar>
+      <!-- <mat-card-title>{{getHeader()}}</mat-card-title>
+      <mat-card-subtitle>{{getDescription()}}</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
+      <dynamic-form  *ngIf="isEnabled"
+                    [questions] = "questions"
+                    [action]="action"
+                    [endpoint] = "endpoint"
+                    [pocokey] = "pocoKey"
+                    icon = "save"
+                    (onFormSubmit) = "onSubmit($event)"></dynamic-form>
+    </mat-card-content>
+  </mat-card>
+</div>

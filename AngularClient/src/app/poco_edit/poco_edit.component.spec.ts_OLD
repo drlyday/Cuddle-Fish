@@ -1,0 +1,47 @@
+﻿/// <reference path="../../../node_modules/@types/jasmine/index.d.ts" />
+import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { PocoEditComponent } from './poco_edit.component';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+import { AppModuleShared } from '../app.module.shared';
+
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  matInput,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatProgressBar,
+  MatDialogModule,
+  MatCheckboxModule
+} from '@angular/material';
+
+let component: PocoEditComponent;
+let fixture: ComponentFixture<PocoEditComponent>;
+
+describe('poco_edit component', () =>
+{
+    // beforeEach(async(() =>
+    // {
+    //     TestBed.configureTestingModule({
+    //         declarations: [PocoEditComponent],
+    //         imports: [
+    //             BrowserModule,
+    //             BrowserAnimationsModule,
+    //             MaterialModule ],
+    //         providers: [
+    //             { provide: ComponentFixtureAutoDetect, useValue: true }
+    //         ]
+    //     });
+    //     fixture = TestBed.createComponent(PocoEditComponent);
+    //     component = fixture.componentInstance;
+    // }));
+
+    it('should do something', async(() =>
+    {
+        expect(true).toEqual(true);
+    }));
+});

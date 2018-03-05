@@ -1,0 +1,130 @@
+﻿/// <reference path="../../../node_modules/@types/jasmine/index.d.ts" />
+import { TestBed, async, 
+         ComponentFixture, 
+         ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { BrowserModule, By } from '@angular/platform-browser';
+import { PocoCreateComponent } from './poco_create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+import { AppModuleShared } from '../app.module.shared';
+import { Component, OnInit,
+         Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute,
+         ParamMap }                    from '@angular/router';
+import { Location }                    from '@angular/common';
+import { MaterialModule, MatSnackBar }  from '@angular/material';
+
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  matInput,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatProgressBar,
+  MatDialogModule,
+  MatCheckboxModule
+} from '@angular/material';
+
+// tslint:disable:import-spacing
+import { QuestionService }         from '../dynamic_form/question.service';
+import { PocoCrudService }         from '../poco_shared/poco-crud.service';
+import { PocoFormattingService }   from '../poco_shared/poco-formatting.service';
+import { PocoMetadataService }     from '../metadata/poco-metadata.service';
+import { EndpointMetadataService } from '../metadata/endpoint-metadata.service';
+import { IEndPointMetadata }       from '../metadata/endpointMetadata';
+import { PocoMetadata }            from '../metadata/pocoMetadata';
+import { PocoBaseMetadata }        from '../metadata/poco-base';
+import { SecurityRoles }           from '../security/securityRoles';
+import { SecurityRolesKnown }      from '../security/securityRolesKnown';
+
+import { RouterStub }           from '../testing/router-stub';
+import { ActivatedRouteStub }   from '../testing/router-stub';
+import { SecurityData }         from '../testing/security.data';
+
+let component: PocoCreateComponent;
+let fixture: ComponentFixture<PocoCreateComponent>;
+let activatedRoute: ActivatedRouteStub;
+
+// How to mock HttpClient: https://medium.com/spektrakel-blog/angular-testing-snippets-httpclient-d1dc2f035eb8
+
+describe('poco_create component', () => {
+    // async beforeEach
+    beforeEach(async(() => {
+        const endpointMetadataServiceStub = {}
+        activatedRoute  = new ActivatedRouteStub();
+        activatedRoute.testParamMap = { id: 7 };
+
+        TestBed.configureTestingModule({
+            declarations: [PocoCreateComponent],
+            imports: [
+                BrowserModule,
+                BrowserAnimationsModule,
+                MaterialModule,
+                AppModuleShared
+            ],
+            providers: [
+                { provide: ComponentFixtureAutoDetect, useValue: true },
+                //{ provide: EndpointMetadataService, useValue: endpointMetadataServiceStub }
+                EndpointMetadataService,
+                QuestionService,
+                PocoCrudService,
+                PocoFormattingService,
+                PocoMetadataService,
+                EndpointMetadataService,
+                Location,
+                MatSnackBar,
+                { provide: Router, useClass: RouterStub },
+                { provide: ActivatedRoute, useValue: activatedRoute }
+            ]
+        })
+        .compileComponents().then(() => {
+          //fixture = TestBed.createComponent(PocoCreateComponent);
+          //component = fixture.componentInstance;
+          //fixture.detectChanges();
+        });
+    }));
+
+    const endpointMetadata = `{
+        'name': 'businessType',
+        'group': 'Regulatory',
+        'label': 'Business Type',
+        'type': 'BusinessType',
+        'icon': null,
+        'description': 'Business Type',
+        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
+        'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessType'
+      }`;
+
+    const securityRoles = []
+
+    // synchronous beforeEach
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PocoCreateComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+        
+        // const endpointMetadataService = fixture.debugElement
+        //                                 .injector.get(EndpointMetadataService);
+        // const spyEndpointByName = spyOn(endpointMetadataService, 'getEndpointByName')
+        //                            .and.returnValue(Promise.resolve(''));
+        // const spyEndpointMetadata = spyOn(endpointMetadataService, 'getEndPointMetadata')
+        //                              .and.returnValue(Promise.resolve(''));
+                                     
+        // const pocoMetadataService = fixture.debugElement
+        //                              .injector.get(PocoMetadataService);
+        // const roles = new ();
+        // const spySecurityRoles = spyOn(pocoMetadataService, 'getSecurityRoles')
+        //                          .and.returnValue(Promise.resolve(roles.securityRoles_All));
+                
+         fixture.detectChanges();
+    });
+
+    it('should return roles', async(() =>
+    {
+        const roles = new SecurityData();
+        //expect(component.securityRoles.roles).toEqual(roles.securityRoles_All.roles);
+        //fixture.detectChanges();
+        //expect(component.securityRoles.roles).toEqual('');
+    }));
+});

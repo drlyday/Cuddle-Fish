@@ -1,0 +1,22 @@
+[
+  {
+    "name": "businessType",
+    "group": "Regulatory",
+    "label": "Business Type",
+    "type": "BusinessType",
+    "icon": “business”,
+    "description": "Business Type",
+    "uiEndPoint": "http://WU2P203390001:9002/api/businessTypeUi",
+    "serviceEndPoint": http://WU2P203390001:9002/api/businessType
+    "actions": [
+          {
+              "key": "workflowId",
+              “name”: “Workflow file upload”
+              "url": "http:/....",
+              "type": "FileUpload",
+              “icon”: “file upload”
+          }
+    ]
+  },
+…
+]

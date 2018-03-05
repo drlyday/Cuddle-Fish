@@ -1,0 +1,17 @@
+﻿
+
+<div *ngIf="questions == undefined">
+  <mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="questions">
+  <mat-card class="example-card">
+    <mat-card-content>
+      <dynamic-form [questions] = "questions"
+                    [action] = "action"
+                    [endpoint] = "endpoint"
+                    [pocokey] = "pocoKey"
+                    icon = "search"
+                    (onFormSubmit) = "onSubmit($event)"></dynamic-form>
+    </mat-card-content>
+  </mat-card>
+</div>

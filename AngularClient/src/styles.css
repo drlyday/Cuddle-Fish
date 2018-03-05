@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Master Styles */
+h1 {
+  color: #369;
+  font-family: Cambria, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+h2, h3 {
+  color: #444;
+  font-family: Cambria, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+body, input[text] {
+  color: #888;
+  /* font-family: Cambria, Georgia; */
+  font-family: Roboto, Cambria, sans-serif;
+  padding: 2em 1em;
+  background: rgba(210, 215, 211, 0.88);
+}
+
+.basicpad{
+  padding: 2em 1em;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+.errorMessage{
+  color:red;
+}
+
+.form-row{
+  margin-top: 10px;
+}
+
+.float-right{
+  float: right;
+}
+
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+/*button {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+.example-card {
+  width: 400px;
+}*/
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+  nav a:visited, a:link {
+      color: #607D8B;
+  }
+
+  nav a:hover {
+      color: #039be5;
+      background-color: #CFD8DC;
+  }
+
+  nav a.active {
+      color: #039be5;
+  }
+
+/* everywhere else */
+* {
+  font-family: Cambria, Helvetica, sans-serif;
+}
+/*
+.example-icon {
+  padding: 10px 14px;
+} */
+
+.example-spacer {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  -o-flex: 1 1 auto;
+  flex: 1 1 auto;
+}

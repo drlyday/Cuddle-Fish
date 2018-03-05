@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Compile Remove="Views\**" />
+    <Compile Remove="wwwroot\bootstrap\**" />
+    <Compile Remove="wwwroot\dist\**" />
+    <Compile Remove="wwwroot\jquery-validation-unobtrusive\**" />
+    <Compile Remove="wwwroot\jquery-validation\**" />
+    <Compile Remove="wwwroot\jquery\**" />
+    <Content Remove="Controllers\**" />
+    <Content Remove="Views\**" />
+    <Content Remove="wwwroot\bootstrap\**" />
+    <Content Remove="wwwroot\dist\**" />
+    <Content Remove="wwwroot\jquery-validation-unobtrusive\**" />
+    <Content Remove="wwwroot\jquery-validation\**" />
+    <Content Remove="wwwroot\jquery\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <EmbeddedResource Remove="wwwroot\bootstrap\**" />
+    <EmbeddedResource Remove="wwwroot\dist\**" />
+    <EmbeddedResource Remove="wwwroot\jquery-validation-unobtrusive\**" />
+    <EmbeddedResource Remove="wwwroot\jquery-validation\**" />
+    <EmbeddedResource Remove="wwwroot\jquery\**" />
+    <None Remove="Controllers\**" />
+    <None Remove="Views\**" />
+    <None Remove="wwwroot\bootstrap\**" />
+    <None Remove="wwwroot\dist\**" />
+    <None Remove="wwwroot\jquery-validation-unobtrusive\**" />
+    <None Remove="wwwroot\jquery-validation\**" />
+    <None Remove="wwwroot\jquery\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.HttpSys" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

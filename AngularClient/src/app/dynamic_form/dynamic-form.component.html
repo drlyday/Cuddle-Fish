@@ -1,0 +1,25 @@
+
+
+<form [formGroup]="form">
+  <mat-grid-list cols="3" rowHeight="70px">
+    <mat-grid-tile *ngFor="let question of questions" >
+      <df-question [question]="question" [form]="form"></df-question>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br/>
+  <!-- <button mat-mini-fab type="submit" [disabled]="!form.valid"><mat-icon>save</mat-icon></button> -->
+  <button mat-mini-fab  (click)="onSubmit();" [disabled]="!form.valid">
+    <mat-icon *ngIf="icon === 'save'" matTooltip={{action}}><i class='material-icons'>&#xE161;</i></mat-icon>
+    <mat-icon *ngIf="icon === 'search'" matTooltip={{action}}><i class='material-icons'>&#xE8B6;</i></mat-icon>
+  </button> 
+  <!-- <button mat-mini-fab type="button"><mat-icon><i class="material-icons">&#xE8B3;</i></mat-icon></button> -->
+  <span class="float-right" *ngIf="canDelete">
+    <button mat-icon-button color="warn" class="example-icon" (click)="onDelete();">
+      <mat-icon matTooltip="Delete" class="example-icon"><i class="material-icons">&#xE872;</i></mat-icon>
+    </button>
+  </span>
+</form>
+<!--
+<div *ngIf="errorMessage" class="form-row">
+    <strong>missing form values</strong><br>{{payLoad}}
+</div> -->

@@ -1,0 +1,163 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in AdminUI app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in AdminUI app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// import our custom themes
+//@import 'theme.scss';
+// @import 'my-light-theme.scss';
+// @import 'my-dark-theme.scss';
+
+// .my-theme {
+//   @include angular-material-theme($my-theme);
+// }
+
+// Define the palettes for AdminUI theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+//https://material.io/guidelines/style/color.html#color-color-palette
+//https://material.angular.io/guide/theming#what-is-a-theme-
+//https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+
+// Define the palettes for AdminUI theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$candy-app-primary: mat-palette($mat-green, 600, 200, 900);
+$candy-app-accent:  mat-palette($mat-yellow, A400);
+$candy-app-warn:    mat-palette($mat-red);
+//$candy-app-foreground:    mat-palette($mat-red);
+
+// Include theme styles for core and each component used in AdminUI app.
+// Alternatively, import and @include the theme mixins for each component
+// that you are using.
+$candy-app-theme: mat-light-theme(
+                                  $candy-app-primary, 
+                                  $candy-app-accent, 
+                                  $candy-app-warn
+                                  );
+
+// Include theme styles for core and each component used in AdminUI app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+// additional css classes
+// you can hardcode one of them on the <body> tag 
+// or switch dynamically during runtime with [class]
+// .my-light-theme {
+//   @include angular-material-theme($my-light-theme);
+// }
+
+// .my-dark-theme {
+//   @include angular-material-theme($my-dark-theme);
+// }
+
+
+/* Master Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  
+  body, input[text] {
+    color: #888;
+    /* font-family: Cambria, Georgia; */
+    font-family: Roboto, Arial, sans-serif;
+    padding: 2em 1em;
+    background: rgba(210, 215, 211, 0.88);
+  }
+  
+  .basicpad{
+    padding: 2em 1em;
+  }
+  
+  a {
+    cursor: pointer;
+    cursor: hand;
+  }
+  .errorMessage{
+    color:red;
+  }
+  
+  .form-row{
+    margin-top: 10px;
+  }
+  
+  .float-right{
+    float: right;
+  }
+  
+  .example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  
+  /*button {
+    font-family: Roboto, Arial, sans-serif;
+  }
+  
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  
+  button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
+  
+  .example-card {
+    width: 400px;
+  }*/
+  
+  /* Navigation link styles */
+  nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  
+    nav a:visited, a:link {
+        color: #607D8B;
+    }
+  
+    nav a:hover {
+        color: #039be5;
+        background-color: #CFD8DC;
+    }
+  
+    nav a.active {
+        color: #039be5;
+    }
+  
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /*
+  .example-icon {
+    padding: 10px 14px;
+  } */
+  
+  .example-spacer {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -o-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }

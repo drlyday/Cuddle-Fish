@@ -1,0 +1,112 @@
+﻿<div *ngIf="endpointCategories" class="basicpad">
+  <mat-tab-group  (selectChange)="onTabSelection($event)">
+    <div *ngIf="endpointMetadata">
+      <mat-tab *ngFor="let category of endpointCategories"
+              (selectChange)='onTabSelection($event)'
+              label={{category}}
+              #thisTab>
+        <div *ngIf="isTabActive(thisTab)">
+          <mat-form-field class="example-full-width">
+            <input type="text"
+                  placeholder="{{category}} Selection"
+                  aria-label="Selection"
+                  matInput
+                  [formControl]="endpointFormControl"
+                  (keyup)="onCategoryChange($event.target.value)"
+                  (click)="onCategoryChange($event.target.value)"
+                  [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="test($event)">
+              <mat-option *ngFor="let option of filteredOptions | async"
+                          [value]="option.name">
+                <mat-icon class="example-icon">{{option.icon}}</mat-icon>
+                <span>{{option.description}}</span> |
+                <small>{{option.name}}</small>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field >
+
+          <div *ngIf="selectedEndpoint">
+            <mat-card>
+              <mat-card-content>
+                <span *ngIf="isBuildingTable()">
+                  building table...
+                  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </span>
+                <div *ngIf="!isBuildingTable()">
+                  <!-- <mat-toolbar class="mat-toolbar mat-primary"> -->
+                  <mat-toolbar>
+                    <mat-icon class="example-icon"><i class="material-icons">&#xE8B6;</i></mat-icon>&nbsp;
+                    {{category}} - {{selectedEndpoint.label}}
+                    <span class="example-spacer"></span>
+                    <mat-icon class="example-icon">{{selectedEndpoint.icon}}</mat-icon>
+                    <div class="button-row">
+                      <!-- <button mat-mini-fab color="secondary" class="example-icon basicpad"
+                              (click)="onSearch(); $event.stopPropagation()">
+                        <mat-icon matTooltip="Search" class="example-icon">search</mat-icon>
+                      </button> -->
+                      <button mat-mini-fab class="example-icon"
+                              (click)="reloadEndpointSelected(); $event.stopPropagation()">
+                          <mat-icon matTooltip="Reload" class="example-icon"><i class="material-icons">&#xE5D5;</i></mat-icon>
+                      </button>
+                      <button *ngIf ='canCreate()' mat-mini-fab class="example-icon"
+                              (click)="onCreate(); $event.stopPropagation()">
+                          <mat-icon matTooltip="Create" class="example-icon"><i class="material-icons">&#xE145;</i></mat-icon>
+                      </button>
+                      <button mat-mini-fab color="secondary" *ngIf="showActionOptions()" class="example-icon basicpad" [mat-menu-trigger-for]="menu">
+                        <mat-icon matTooltip="Actions..."><i class="material-icons">&#xE5D4;</i></mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <span *ngIf="canExecute()" >
+                          <div *ngFor="let action of availableActions">
+                            <button mat-button class="example-full-width" (click)="onAction(action);">
+                              <mat-icon>{{getActionIcon(action)}}</mat-icon>&nbsp;&nbsp;
+                              <span>{{action.name}}</span>
+                            </button>
+                          </div>
+                        </span>
+                        <!-- <button *ngIf="canDelete()" mat-button color="warn" 
+                                class="example-full-width" (click)="onDelete();">
+                          <mat-icon matTooltip="Delete" class="example-icon">delete</mat-icon>              
+                          <span>Delete</span>
+                        </button> -->
+                      </mat-menu>
+                    </div>
+                  </mat-toolbar>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-description class='example-content-width' >  
+                        <p>                      
+                          <i class="material-icons">&#xE152;</i>
+                          Filter Results<b *ngIf='isFilterApplied && !isLoadingTable()'>: (ACTIVE)</b> &nbsp;&nbsp;                    
+                        </p>   
+                        
+                        <p class='example-90-width example-spacer' *ngIf="isLoadingTable()">
+                          loading data...
+                          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                        </p>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <poco-search-filter [endpoint]="selectedEndpoint"
+                                [action]="Search"
+                                (onSubmitEvent) = onSearch($event)></poco-search-filter>
+                  </mat-expansion-panel>
+
+                  <meta-table [pocoMetamodel]="pocoBaseMetadata.metadata"
+                              [pocoMetamodelDisplayColumns]="displayedColumns"
+                              [endpoint]="selectedEndpoint"
+                              [canUpdate]="canUpdate"
+                              [pocoKey]="pocoKey"
+                              (onPageEvent) = onPage($event)
+                              (onSortEvent) = onSort($event)
+                              (onEditEvent) = onEdit($event)
+                              (onSelectedItemsChangedEvent) = onSelectedItemsChangedEvent($event)
+                              ></meta-table>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </mat-tab>
+    </div>
+  </mat-tab-group>
+</div>

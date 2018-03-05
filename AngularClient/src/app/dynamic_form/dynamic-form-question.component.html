@@ -1,0 +1,86 @@
+<div [formGroup]="form">
+  <span [ngSwitch]="question.controlType">
+
+    <mat-form-field *ngSwitchCase="'textbox'" class="example-full-width">
+      <input matInput [placeholder]="getFormLabel()"
+                     [formControlName]="question.key"
+                     [id]="question.key"
+                     [type]="question.type"
+                     [step]=1>
+    </mat-form-field>
+    <mat-form-field *ngSwitchCase="'fileupload'" class="example-full-width">
+      <input matInput [placeholder]="getFormLabel()"
+                      [formControlName]="question.key"
+                      [id]="question.key"
+                      accept="*.*"
+                      [type]="question.type"
+                      (change)="onUpload($event)" >
+    </mat-form-field>
+
+    <div *ngSwitchCase="'boolean'">
+      <!-- <span [ngSwitch]="question.required"> -->
+        <span *ngIf="question.required">
+          <mat-slide-toggle matInput
+                          class="example-margin"
+                          [disabled]="false"
+                          [formControlName]="question.key"
+                          [id]="question.key">
+            {{getFormLabel()}}
+          </mat-slide-toggle>
+        </span>
+
+        <span *ngIf="!question.required">
+          <mat-form-field >
+            <mat-select [id]="question.key"
+                        [placeholder]="getFormLabel()"
+                        [formControlName]="question.key">
+              <mat-option [value]="null"></mat-option>
+              <mat-option [value]="true">true</mat-option>
+              <mat-option [value]="false">false</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+      <!-- </span> -->
+    </div>
+    <!-- </mat-form-field> -->
+
+    <mat-form-field *ngSwitchCase="'datetime-local'" class="example-full-width">
+      <input matInput  [placeholder]="getFormLabel()"
+                      [formControlName]="question.key"
+                      [id]="question.key"
+                      type="datetime-local"
+                      step="1">
+    </mat-form-field>
+ 
+    <mat-form-field *ngSwitchCase="'dropdown'" >
+      <mat-select [id]="question.key"
+                  [placeholder]="getFormLabel()"
+                  [formControlName]="question.key"
+                  class="example-full-width">
+      <mat-option *ngFor="let opt of question.options" [value]="opt.key">
+        {{opt.value}}
+      </mat-option>
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field  *ngSwitchCase="'typeAheadDropdown'" class="example-full-width">
+      <input type="text"
+             [placeholder]="getFormLabel()"
+             aria-label="getFormLabel()"
+             matInput
+             [formControlName]="question.key"
+             [id]="question.key"
+             (keyup)="question.onDropDownChange($event.target.value, question.selector)"
+             [matAutocomplete]="auto">
+
+             <!-- (click)="question.onDropDownChange($event.target.value)" -->
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="question.displayFn.bind(this.question)">
+        <mat-option *ngFor="let opt of question.filteredOptions | async"
+                   [value]="opt.key">
+          <span>{{opt.value}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field >
+  </span>
+  <!-- <div class="errorMessage" *ngIf="!isValid">* required</div> -->
+</div>

@@ -1,0 +1,64 @@
+﻿<div *ngIf="questions">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-toolbar color="secondary">
+        <mat-icon matTooltip="Edit"><i class="material-icons">&#xE150;</i></mat-icon>
+        <p class="overflow-ellipsis">{{getHeader()}}</p>
+        <span class="example-spacer"></span>
+        <div class="button-row">
+          <button mat-mini-fab class="example-icon basicpad"
+                  (click)="onSearch(); $event.stopPropagation()">
+            <mat-icon matTooltip="Search" class="example-icon"><i class="material-icons">&#xE8B6;</i></mat-icon>
+          </button>
+          <button *ngIf ='canCreate()' mat-mini-fab class="example-icon"
+                  (click)="onCreate(); $event.stopPropagation()">
+              <mat-icon matTooltip="Create" class="example-icon"><i class="material-icons">&#xE145;</i></mat-icon>
+          </button>
+          <button mat-mini-fab *ngIf="showActionOptions()" color="secondary" class="example-icon basicpad" [mat-menu-trigger-for]="menu">
+            <mat-icon matTooltip="Actions..."><i class="material-icons">&#xE5D4;</i></mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <span *ngIf="canExecute()" >
+              <div *ngFor="let action of availableActions">
+                <button mat-button class="example-full-width" (click)="onAction(action)">
+                  <mat-icon *ngIf='getActionIcon(action) === "fileupload"'><i class="material-icons">&#xE2C3;</i></mat-icon>
+                  <mat-icon *ngIf='getActionIcon(action) === ""'><i class="material-icons">&#xE037;</i></mat-icon>
+                  <span>{{action.name}}</span>
+                </button>
+              </div>
+            </span>
+            <button *ngIf="canDelete()" mat-button color="warn" class="example-full-width" (click)="onDelete();">
+              <mat-icon matTooltip="Delete" class="example-icon"><i class="material-icons">&#xE872;</i></mat-icon>              
+              <span>Delete</span>
+            </button>
+            <button mat-button class="example-full-width" (click)="onReset()">
+              <mat-icon matTooltip="Reset" class="example-icon"><i class="material-icons">&#xE166;</i></mat-icon>              
+              <span>Reset</span>
+            </button>
+            <button mat-button class="example-full-width" (click)="onCancel()">
+              <mat-icon matTooltip="Cancel" class="example-icon"><i class="material-icons">&#xE5C9;</i></mat-icon>              
+              <span>Cancel</span>
+            </button>
+            <button mat-button class="example-full-width" (click)="onCopy()">
+              <mat-icon matTooltip="Copy" class="example-icon"><i class="material-icons">&#xE14D;</i></mat-icon>              
+              <span>Copy</span>
+            </button>
+          </mat-menu>
+        </div>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content>
+      <dynamic-form *ngIf="isEnabled"
+                    [questions]="questions"
+                    [action]="action"
+                    [endpoint] ="endpoint"
+                    icon = "save"
+                    [canDelete] = "false"
+                    (onFormSubmit) = "onSubmit($event)"
+                    (onDeleteEvent) = "onDelete()"></dynamic-form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="isWaiting">
+  <mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+</div>

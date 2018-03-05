@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+  <!-- <p>{{pocoName}} + ': File Upload'</p> -->
+  <!-- <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="*.*" maxFileSize="10000000" (onUpload)="onUpload($event)"></p-fileUpload> -->
+   <!-- https://stackoverflow.com/questions/40214772/file-upload-in-angular-2 -->
+
+   <input type="file" (change)="onFileSelected($event)" placeholder="Upload file" accept="*.*">
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="fileList"  tabindex="2">Upload</button>
+  <button mat-button (click)="onClose()" tabindex="-1">Cancel</button>
+</div>
