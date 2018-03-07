@@ -227,6 +227,10 @@
     <Compile Include="Areas\MovieStore\ViewModels\Movies\EditAllMoviesViewModel.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\MovieSearchViewModel.cs" />
     <Compile Include="Areas\MovieStore\MoviesAreaRegistration.cs" />
+    <Compile Include="Areas\MovieWarehouse\Controllers\AvailableInventoriesController.cs" />
+    <Compile Include="Areas\MovieWarehouse\Controllers\InventoryController.cs" />
+    <Compile Include="Areas\MovieWarehouse\Models\AvailableInventory.cs" />
+    <Compile Include="Areas\MovieWarehouse\MovieWarehouseAreaRegistration.cs" />
     <Compile Include="AutofacConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -361,6 +365,7 @@
     <Content Include="Scripts\foundation.js" />
     <Content Include="Scripts\foundation.min.js" />
     <Content Include="Areas\MovieStore\Views\Auth\Auth.cshtml" />
+    <Content Include="Areas\MovieWarehouse\Views\web.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -814,6 +819,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\MovieWarehouse\Views\Inventory\" />
+    <Folder Include="Areas\MovieWarehouse\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

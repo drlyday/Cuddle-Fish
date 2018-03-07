@@ -1,6 +1,6 @@
 {
-    "clientId": "pdm-svcs",
-    "authSvcUrl": "https://pdm-ec2-deva-02.cd2.bp.com/sso/authenticate",
-    "endpointSvcUrl": "http://pdm-ec2-deva-01.cd2.bp.com:9002/api/ui/endPoints",
+    "clientId": "CuddleFish",
+    "authSvcUrl": "",
+    "endpointSvcUrl": "http://localhost:9004/api/endpoints",
     "version": "1.0 BETA"
 }

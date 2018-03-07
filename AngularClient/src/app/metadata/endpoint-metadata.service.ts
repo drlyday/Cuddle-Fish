@@ -52,7 +52,7 @@ export class EndpointMetadataService {
                                                                    .then(response => this.handleResponse(response))
                                                                    .catch(this.handleError));
       return new Promise<IEndPointMetadata[]>(resolve => resolve(endpointMetadataPromise));
-    } 
+    }
     return new Promise<IEndPointMetadata[]>(resolve => resolve(this.endpointsMetadata));
   }
 
@@ -67,7 +67,7 @@ export class EndpointMetadataService {
                                                                    .then(response => this.handleResponse(response))
                                                                    .catch(this.handleError));
       return new Promise<IEndPointMetadata[]>(resolve => resolve(endpointMetadataPromise));
-    } 
+    }
     return new Promise(resolve => resolve(this.endpointsMetadata));
   }
 
@@ -109,7 +109,7 @@ export class EndpointMetadataService {
     this.endpointsMetadata = [];
     return new Promise<IEndPointMetadata[]>(resolve => resolve(this.endpointsMetadata));
   }
-  
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 4000,

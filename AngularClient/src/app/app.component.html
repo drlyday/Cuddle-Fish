@@ -1,34 +1,32 @@
 <mat-toolbar class="mat-medium-tall" color="primary">
-  <!-- <button mat-icon [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon> </button> -->
-  <button mat-icon-button class='basicpad' (click)="onSearch()"><img src='../favicon.ico'></button>  
-  <div class='basicpad'>Power Data Market Manager</div>
-  <span class="example-spacer"></span>
-  <i class="material-icons">&#xE87C;</i>
-  <div>{{loginTitle}}</div>
-  <!-- <div>{{loginTitle}}</div> -->
+    <!-- <button mat-icon [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon> </button> -->
+    <button mat-icon-button class='basicpad' (click)="onSearch()"><img src='../favicon.ico'></button>
+    <div class='basicpad'>Cuddle Fish</div>
+    <span class="example-spacer"></span>
+    <i class="material-icons">&#xE87C;</i>
+    <div>{{loginTitle}}</div>
+    <!-- <div>{{loginTitle}}</div> -->
 </mat-toolbar>
 <div *ngIf="secured === true">
-  <mat-sidenav-container>
-    <!-- class="basicpad"> -->
-    <!-- <mat-sidenav mode="side" opened="true">
+    <mat-sidenav-container>
+        <!-- class="basicpad"> -->
+        <!-- <mat-sidenav mode="side" opened="true">
       <mat-nav-list>
         <mat-list-item *ngFor="let link of links">
           <a mdLine routerLink={{link.routerLink}} routerLinkActive="active">{{ link.name }}</a>
         </mat-list-item>
       </mat-nav-list>
     </mat-sidenav> -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-container>
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>
 </div>
 <div *ngIf="secured === false && failedLogIn === false">
-  <span>logging in...</span>
-  <mat-progress-bar mode="indeterminate">loading security...</mat-progress-bar>
+    <span>logging in...</span>
+    <mat-progress-bar mode="indeterminate">loading security...</mat-progress-bar>
 </div>
 <div *ngIf="secured === false && failedLogIn === true">
-   <i class="material-icons">&#xE32A;</i>
-  <div>Login Failed</div>
-  <div>Security Token was not retrieved successfully</div>
-  <div>Refresh page to retry</div>
+    <i class="material-icons">&#xE32A;</i>
+    <div>Login Failed</div>
+    <div>Security Token was not retrieved successfully</div>
+    <div>Refresh page to retry</div>
 </div>
-
-

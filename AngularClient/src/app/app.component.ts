@@ -15,9 +15,9 @@ import { ConfigurationService }  from './configuration/configuration.service';
 })
 export class AppComponent implements OnInit {
   links: any[];
-  secured = false;
+  secured = true;
   failedLogIn = false;
-  loginTitle = 'not logged in';
+  loginTitle;
 
   constructor(
     private readonly configurationService: ConfigurationService,
@@ -26,32 +26,33 @@ export class AppComponent implements OnInit {
     private readonly router: Router) { }
 
   ngOnInit(): void {
-    this.initSecurity();
-    // this.secured = true;
-    // this.loginTitle = 'Security Disabled';
+    // this.initSecurity();
+    console.log('security is disabled');
+    this.secured = true;
+    this.loginTitle = 'Security Disabled';
     this.links = [];
   }
-   
+
   initSecurity() {
     // if (this.tokenSecurityService.isSecured) {
     //   this.secured = true;
     //   this.loginTitle = this.tokenSecurityService.tokenSubjectNoDomain;
     // }else {
-      this.securityService
-          .loginNTLM()
-          .subscribe(response => {
-              this.tokenSecurityService.token = response.access_token;
-              this.secured = true;
-              this.loginTitle = this.tokenSecurityService.tokenSubjectNoDomain;
-            }, error => {
-                this.failedLogIn = true;
-                console.error(error);
-                this.secured = false;
-                this.loginTitle = 'unauthorized';
-              });
+      // this.securityService
+      //     .loginNTLM()
+      //     .subscribe(response => {
+      //         this.tokenSecurityService.token = response.access_token;
+      //         this.secured = true;
+      //         this.loginTitle = this.tokenSecurityService.tokenSubjectNoDomain;
+      //       }, error => {
+      //           this.failedLogIn = true;
+      //           console.error(error);
+      //           this.secured = false;
+      //           this.loginTitle = 'unauthorized';
+      //         });
      //}
   }
-  
+
   onSearch() {
     this.router.navigate(['/search']);
   }

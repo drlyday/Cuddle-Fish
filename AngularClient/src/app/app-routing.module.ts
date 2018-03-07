@@ -12,9 +12,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full'},
   { path: 'search', component: PocoSearchComponent},
   { path: 'search/:endpoint', component: PocoSearchComponent },
-  { path: 'create/:endpoint', component: PocoCreateComponent, canActivate: [CanActivateViaAuthGuard]  },
-  { path: 'edit/:endpoint/:id', component: PocoEditComponent, canActivate: [CanActivateViaAuthGuard]  },
-  { path: 'copy/:endpoint/:id', component: PocoCreateComponent, canActivate: [CanActivateViaAuthGuard]  },
+  { path: 'create/:endpoint', component: PocoCreateComponent },
+  { path: 'edit/:endpoint/:id', component: PocoEditComponent},
+  { path: 'copy/:endpoint/:id', component: PocoCreateComponent},
+  // { path: 'create/:endpoint', component: PocoCreateComponent, canActivate: [CanActivateViaAuthGuard]  },
+  // { path: 'edit/:endpoint/:id', component: PocoEditComponent, canActivate: [CanActivateViaAuthGuard]  },
+  // { path: 'copy/:endpoint/:id', component: PocoCreateComponent, canActivate: [CanActivateViaAuthGuard]  },
   // { path: 'edit/:id', component: PocoEditComponent }
 ];
 
