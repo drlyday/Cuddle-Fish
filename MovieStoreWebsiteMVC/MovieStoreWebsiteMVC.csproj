@@ -217,6 +217,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\MovieStore\Controllers\AccountController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\Api\GenreController.cs" />
+    <Compile Include="Areas\MovieStore\Controllers\Api\MoviesController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\AuthController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\BaseWebController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\HomeController.cs" />
@@ -224,6 +225,8 @@
     <Compile Include="Areas\MovieStore\Controllers\MoviesController.cs" />
     <Compile Include="Areas\MovieStore\Controllers\TEstController.cs" />
     <Compile Include="Areas\MovieStore\Models\LoginModel.cs" />
+    <Compile Include="Areas\MovieStore\Models\MetadataHeader.cs" />
+    <Compile Include="Areas\MovieStore\Models\PropertyMetadata.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\EditAllMoviesViewModel.cs" />
     <Compile Include="Areas\MovieStore\ViewModels\Movies\MovieSearchViewModel.cs" />
     <Compile Include="Areas\MovieStore\MoviesAreaRegistration.cs" />
