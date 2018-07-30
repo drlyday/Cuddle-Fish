@@ -11,11 +11,12 @@ import { PocoBaseMetadata } from '../metadata/poco-base';
 import { EndpointMetadataService } from '../metadata/endpoint-metadata.service';
 import { SecurityService } from '../security/security.service';
 import { SecurityTokenService } from '../security/security.token.service';
+import { SecurityData } from '../testing/security.data';
 @Injectable()
 export class PocoMetadataService {
   metamodel: PocoBaseMetadata;
 
-  constructor(readonly http: Http, 
+  constructor(readonly http: Http,
               readonly endpointService: EndpointMetadataService,
               readonly securityService: SecurityService,
               readonly tokenSecurityService: SecurityTokenService,
@@ -27,9 +28,9 @@ export class PocoMetadataService {
       if (!endpoint) {
         return undefined;
       }
-      const endpointurl = endpoint.uiEndPoint;
+      const endpointurl = endpoint.uiEndpoint;
 
-      const url = endpointurl + '/metadata';
+      const url = endpointurl; // + '/metadata';
       const headers = this.tokenSecurityService.httpAuthorizationHeader;
       const options = new RequestOptions({ headers: headers });
       const poco = Promise.resolve(this.http.get(url, options).timeout(6000)
@@ -41,22 +42,24 @@ export class PocoMetadataService {
   }
 
   getSecurityRoles(endpointName: string): Promise<SecurityRoles> {
-      const endpoint = this.endpointService.getEndpointByName(endpointName);
-      if (!endpoint) {
-        return undefined;
-      }
-      const endpointurl = endpoint.uiEndPoint;
+      // const endpoint = this.endpointService.getEndpointByName(endpointName);
+      // if (!endpoint) {
+      //   return undefined;
+      // }
+      // const endpointurl = endpoint.uiEndpoint;
 
-      const url = endpointurl + '/roles';
+      // const url = endpointurl + '/roles';
 
-      const headers = this.tokenSecurityService.httpAuthorizationHeader;
-      const options = new RequestOptions({ headers: headers });
-      const poco = Promise.resolve(this.http.get(url, options).timeout(6000)
-      .toPromise()
-      .then(response => this.handleSecurityRoleResponse(response))
-      .catch(this.handleSecurityRolesError));
+      // const headers = this.tokenSecurityService.httpAuthorizationHeader;
+      // const options = new RequestOptions({ headers: headers });
+      // const poco = Promise.resolve(this.http.get(url, options).timeout(6000)
+      // .toPromise()
+      // .then(response => this.handleSecurityRoleResponse(response))
+      // .catch(this.handleSecurityRolesError));
 
-    return new Promise(resolve => resolve(poco));
+      const roles = new SecurityData();
+    //return new Promise(resolve => resolve(poco));
+      return new Promise(resolve => resolve(roles.securityRoles_All));
   }
 
   getPocoMetaKey(pocoMetadata: PocoBaseMetadata) {
@@ -86,6 +89,6 @@ export class PocoMetadataService {
   }
 
   parseMetaDataCategories(stuff: string =  '***NO METADATA!~!~!~!~!~!~!') {
-    
+
   }
 }

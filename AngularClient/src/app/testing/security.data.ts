@@ -1,5 +1,5 @@
 export class SecurityData {
-    securityRoles_All: {
+    securityRoles_All= {
                             "roles": [
                                 "Admin",
                                 "Create",

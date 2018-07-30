@@ -8,6 +8,6 @@ export interface IEndPointMetadata {
   name: string;
   type: string;
   serviceEndPoint: string;
-  uiEndPoint: string;
+  uiEndpoint: string;
   actions: IEndpointAction[];
 }

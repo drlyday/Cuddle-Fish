@@ -1,6 +1,6 @@
 ﻿/// <reference path="../../../node_modules/@types/jasmine/index.d.ts" />
-import { TestBed, async, 
-         ComponentFixture, 
+import { TestBed, async,
+         ComponentFixture,
          ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { PocoCreateComponent } from './poco_create.component';
@@ -92,7 +92,7 @@ describe('poco_create component', () => {
         'type': 'BusinessType',
         'icon': null,
         'description': 'Business Type',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessType'
       }`;
 
@@ -103,20 +103,20 @@ describe('poco_create component', () => {
         fixture = TestBed.createComponent(PocoCreateComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-        
+
         // const endpointMetadataService = fixture.debugElement
         //                                 .injector.get(EndpointMetadataService);
         // const spyEndpointByName = spyOn(endpointMetadataService, 'getEndpointByName')
         //                            .and.returnValue(Promise.resolve(''));
         // const spyEndpointMetadata = spyOn(endpointMetadataService, 'getEndPointMetadata')
         //                              .and.returnValue(Promise.resolve(''));
-                                     
+
         // const pocoMetadataService = fixture.debugElement
         //                              .injector.get(PocoMetadataService);
         // const roles = new ();
         // const spySecurityRoles = spyOn(pocoMetadataService, 'getSecurityRoles')
         //                          .and.returnValue(Promise.resolve(roles.securityRoles_All));
-                
+
          fixture.detectChanges();
     });
 

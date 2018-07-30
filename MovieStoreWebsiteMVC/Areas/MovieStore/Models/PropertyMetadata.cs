@@ -14,7 +14,7 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Models
         public string Type { get; set; }
         public bool Required { get; set; }
         public int Order { get; set; }
-        public bool GridShow { get; set; }
+        public bool Gridshow { get; set; }
         public string color { get; set; }
     }
 }

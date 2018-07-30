@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
@@ -9,6 +10,7 @@ namespace aspnet5
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
             ConfigureAuth(app);
 
             // using https://app.pluralsight.com/player?course=owin-katana-understanding&author=chris-klug&name=owin-katana-understanding-m5&clip=1&mode=live

@@ -29,7 +29,7 @@ namespace MovieStore.Handlers
     public TR Handle<TR>(IMessage message)
     {
       Console.WriteLine($"MessageDispatcher<> Received {message.Name}.");
-      InnerHandle<TR>((T)message);
+      return InnerHandle<TR>((T)message);
     }
 
     protected abstract TR InnerHandle<TR>(T message);

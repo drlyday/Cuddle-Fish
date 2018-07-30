@@ -1,7 +1,7 @@
 import { IEndPointMetadata } from '../metadata/endpointMetadata';
 
 export class EndpointData {
-    endpoints: IEndPointMetadata[] = 
+    endpoints: IEndPointMetadata[] =
     [
       {
           'name': 'businessType',
@@ -10,7 +10,7 @@ export class EndpointData {
           'icon': null,
           'type': 'Business Type',
           'description': 'Business Type',
-          'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
+          'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
           'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessType',
           'actions' : []
       },
@@ -21,7 +21,7 @@ export class EndpointData {
         'type': 'RegulatoryReport',
         'icon': null,
         'description': 'Regulatory Report',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReportUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReportUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReport',
         'actions' : []
       },
@@ -32,7 +32,7 @@ export class EndpointData {
         'type': 'RgltMktTimezone',
         'icon': null,
         'description': 'Rglt Mkt Timezone',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezoneUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezoneUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezone',
         'actions' : []
       },
@@ -43,7 +43,7 @@ export class EndpointData {
         'type': 'DimMarket',
         'icon': null,
         'description': 'Dim Market',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarketUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarketUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarket',
         'actions' : []
       },
@@ -54,7 +54,7 @@ export class EndpointData {
         'type': 'Timezone',
         'icon': null,
         'description': 'Timezone',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezoneUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezoneUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezone',
         'actions' : []
       }
@@ -67,7 +67,7 @@ export class EndpointData {
     //       'type': 'BusinessType',
     //       'icon': null,
     //       'description': 'Business Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessType',
     //       'actions' : []
     //     },
@@ -78,7 +78,7 @@ export class EndpointData {
     //       'type': 'CompTypeAttribute',
     //       'icon': null,
     //       'description': 'Comp Type Attribute',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/compTypeAttributeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/compTypeAttributeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/compTypeAttribute'
     //     },
     //     {
@@ -88,7 +88,7 @@ export class EndpointData {
     //       'type': 'DimChargeType',
     //       'icon': null,
     //       'description': 'Dim Charge Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimChargeTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimChargeTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimChargeType'
     //     },
     //     {
@@ -98,7 +98,7 @@ export class EndpointData {
     //       'type': 'DimClrgCode',
     //       'icon': null,
     //       'description': 'Dim Clrg Code',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimClrgCodeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimClrgCodeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimClrgCode'
     //     },
     //     {
@@ -108,7 +108,7 @@ export class EndpointData {
     //       'type': 'DimCode',
     //       'icon': null,
     //       'description': 'Dim Code',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCodeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCodeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCode'
     //     },
     //     {
@@ -118,7 +118,7 @@ export class EndpointData {
     //       'type': 'DimCompType',
     //       'icon': null,
     //       'description': 'Dim Comp Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCompTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCompTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCompType'
     //     },
     //     {
@@ -128,7 +128,7 @@ export class EndpointData {
     //       'type': 'DimCounterparty',
     //       'icon': null,
     //       'description': 'Dim Counterparty',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCounterpartyUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCounterpartyUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimCounterparty'
     //     },
     //     {
@@ -138,7 +138,7 @@ export class EndpointData {
     //       'type': 'DimMarket',
     //       'icon': null,
     //       'description': 'Dim Market',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarketUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarketUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMarket'
     //     },
     //     {
@@ -148,7 +148,7 @@ export class EndpointData {
     //       'type': 'DimMeterDataType',
     //       'icon': null,
     //       'description': 'Dim Meter Data Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMeterDataTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMeterDataTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimMeterDataType'
     //     },
     //     {
@@ -158,7 +158,7 @@ export class EndpointData {
     //       'type': 'DimPriceType',
     //       'icon': null,
     //       'description': 'Dim Price Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPriceTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPriceTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPriceType'
     //     },
     //     {
@@ -168,7 +168,7 @@ export class EndpointData {
     //       'type': 'DimPtcpt',
     //       'icon': null,
     //       'description': 'Dim Ptcpt',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPtcptUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPtcptUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimPtcpt'
     //     },
     //     {
@@ -178,7 +178,7 @@ export class EndpointData {
     //       'type': 'DimSchdCmdty',
     //       'icon': null,
     //       'description': 'Dim Schd Cmdty',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdtyUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdtyUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdty'
     //     },
     //     {
@@ -188,7 +188,7 @@ export class EndpointData {
     //       'type': 'DimSchdCmdtySubType',
     //       'icon': null,
     //       'description': 'Dim Schd Cmdty Sub Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdtySubTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdtySubTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdCmdtySubType'
     //     },
     //     {
@@ -198,7 +198,7 @@ export class EndpointData {
     //       'type': 'DimSchdType',
     //       'icon': null,
     //       'description': 'Dim Schd Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSchdType'
     //     },
     //     {
@@ -208,7 +208,7 @@ export class EndpointData {
     //       'type': 'DimSrvcType',
     //       'icon': null,
     //       'description': 'Dim Srvc Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSrvcTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSrvcTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimSrvcType'
     //     },
     //     {
@@ -218,7 +218,7 @@ export class EndpointData {
     //       'type': 'DimStatus',
     //       'icon': null,
     //       'description': 'Dim Status',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStatusUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStatusUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStatus'
     //     },
     //     {
@@ -228,7 +228,7 @@ export class EndpointData {
     //       'type': 'DimStmntType',
     //       'icon': null,
     //       'description': 'Dim Stmnt Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStmntTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStmntTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimStmntType'
     //     },
     //     {
@@ -238,7 +238,7 @@ export class EndpointData {
     //       'type': 'DimTxPt',
     //       'icon': null,
     //       'description': 'Dim Tx Pt',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimTxPtUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimTxPtUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/dimTxPt'
     //     },
     //     {
@@ -248,7 +248,7 @@ export class EndpointData {
     //       'type': 'EpsCounterpartyPartcptXref',
     //       'icon': null,
     //       'description': 'Eps Counterparty Partcpt Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCounterpartyPartcptXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCounterpartyPartcptXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCounterpartyPartcptXref'
     //     },
     //     {
@@ -258,7 +258,7 @@ export class EndpointData {
     //       'type': 'EpsCurveDefinitions',
     //       'icon': null,
     //       'description': 'Eps Curve Definitions',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCurveDefinitionsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCurveDefinitionsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsCurveDefinitions'
     //     },
     //     {
@@ -268,7 +268,7 @@ export class EndpointData {
     //       'type': 'EpsRepCounterpartyXref',
     //       'icon': null,
     //       'description': 'Eps Rep Counterparty Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsRepCounterpartyXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsRepCounterpartyXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/epsRepCounterpartyXref'
     //     },
     //     {
@@ -278,7 +278,7 @@ export class EndpointData {
     //       'type': 'EqrContracts',
     //       'icon': null,
     //       'description': 'Eqr Contracts',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrContractsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrContractsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrContracts'
     //     },
     //     {
@@ -288,7 +288,7 @@ export class EndpointData {
     //       'type': 'EqrFiler',
     //       'icon': null,
     //       'description': 'Eqr Filer',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilerUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilerUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFiler'
     //     },
     //     {
@@ -298,7 +298,7 @@ export class EndpointData {
     //       'type': 'EqrFiling',
     //       'icon': null,
     //       'description': 'Eqr Filing',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilingUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilingUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFiling'
     //     },
     //     {
@@ -308,7 +308,7 @@ export class EndpointData {
     //       'type': 'EqrFilingSet',
     //       'icon': null,
     //       'description': 'Eqr Filing Set',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilingSetUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilingSetUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrFilingSet'
     //     },
     //     {
@@ -318,7 +318,7 @@ export class EndpointData {
     //       'type': 'EqrTransactions',
     //       'icon': null,
     //       'description': 'Eqr Transactions',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrTransactionsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrTransactionsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrTransactions'
     //     },
     //     {
@@ -328,7 +328,7 @@ export class EndpointData {
     //       'type': 'EqrWorkflow',
     //       'icon': null,
     //       'description': 'Eqr Workflow',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrWorkflowUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrWorkflowUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/eqrWorkflow'
     //     },
     //     {
@@ -338,7 +338,7 @@ export class EndpointData {
     //       'type': 'JobLog',
     //       'icon': null,
     //       'description': 'Job Log',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobLogUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobLogUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobLog'
     //     },
     //     {
@@ -348,7 +348,7 @@ export class EndpointData {
     //       'type': 'JobStatus',
     //       'icon': null,
     //       'description': 'Job Status',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobStatusUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobStatusUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/jobStatus'
     //     },
     //     {
@@ -358,7 +358,7 @@ export class EndpointData {
     //       'type': 'MarketHolidayCalendar',
     //       'icon': null,
     //       'description': 'Market Holiday Calendar',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/marketHolidayCalendarUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/marketHolidayCalendarUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/marketHolidayCalendar'
     //     },
     //     {
@@ -368,7 +368,7 @@ export class EndpointData {
     //       'type': 'NmChangeSttlControl',
     //       'icon': null,
     //       'description': 'Nm Change Sttl Control',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeSttlControlUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeSttlControlUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeSttlControl'
     //     },
     //     {
@@ -378,7 +378,7 @@ export class EndpointData {
     //       'type': 'NmChangeTxnControl',
     //       'icon': null,
     //       'description': 'Nm Change Txn Control',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeTxnControlUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeTxnControlUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmChangeTxnControl'
     //     },
     //     {
@@ -388,7 +388,7 @@ export class EndpointData {
     //       'type': 'NmHistSttlLoadControl',
     //       'icon': null,
     //       'description': 'Nm Hist Sttl Load Control',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmHistSttlLoadControlUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmHistSttlLoadControlUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmHistSttlLoadControl'
     //     },
     //     {
@@ -398,7 +398,7 @@ export class EndpointData {
     //       'type': 'NmMeterData',
     //       'icon': null,
     //       'description': 'Nm Meter Data',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmMeterDataUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmMeterDataUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmMeterData'
     //     },
     //     {
@@ -408,7 +408,7 @@ export class EndpointData {
     //       'type': 'NmPrice',
     //       'icon': null,
     //       'description': 'Nm Price',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmPriceUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmPriceUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmPrice'
     //     },
     //     {
@@ -418,7 +418,7 @@ export class EndpointData {
     //       'type': 'NmSchedule',
     //       'icon': null,
     //       'description': 'Nm Schedule',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmScheduleUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmScheduleUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmSchedule'
     //     },
     //     {
@@ -428,7 +428,7 @@ export class EndpointData {
     //       'type': 'NmStmntComp',
     //       'icon': null,
     //       'description': 'Nm Stmnt Comp',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntCompUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntCompUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntComp'
     //     },
     //     {
@@ -438,7 +438,7 @@ export class EndpointData {
     //       'type': 'NmStmntDetail',
     //       'icon': null,
     //       'description': 'Nm Stmnt Detail',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntDetailUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntDetailUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmStmntDetail'
     //     },
     //     {
@@ -448,7 +448,7 @@ export class EndpointData {
     //       'type': 'NmSttlLoadControl',
     //       'icon': null,
     //       'description': 'Nm Sttl Load Control',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmSttlLoadControlUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmSttlLoadControlUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/nmSttlLoadControl'
     //     },
     //     {
@@ -458,7 +458,7 @@ export class EndpointData {
     //       'type': 'PdmTest',
     //       'icon': null,
     //       'description': 'Pdm Test',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/pdmTestUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/pdmTestUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/pdmTest'
     //     },
     //     {
@@ -468,7 +468,7 @@ export class EndpointData {
     //       'type': 'PrrExcludedCounterparties',
     //       'icon': null,
     //       'description': 'Prr Excluded Counterparties',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/prrExcludedCounterpartiesUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/prrExcludedCounterpartiesUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/prrExcludedCounterparties'
     //     },
     //     {
@@ -478,7 +478,7 @@ export class EndpointData {
     //       'type': 'PtcptBusinessType',
     //       'icon': null,
     //       'description': 'Ptcpt Business Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/ptcptBusinessTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/ptcptBusinessTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/ptcptBusinessType'
     //     },
     //     {
@@ -488,7 +488,7 @@ export class EndpointData {
     //       'type': 'QrtzBlobTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Blob Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzBlobTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzBlobTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzBlobTriggers'
     //     },
     //     {
@@ -498,7 +498,7 @@ export class EndpointData {
     //       'type': 'QrtzCalendars',
     //       'icon': null,
     //       'description': 'Qrtz Calendars',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCalendarsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCalendarsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCalendars'
     //     },
     //     {
@@ -508,7 +508,7 @@ export class EndpointData {
     //       'type': 'QrtzCronTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Cron Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCronTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCronTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzCronTriggers'
     //     },
     //     {
@@ -518,7 +518,7 @@ export class EndpointData {
     //       'type': 'QrtzFiredTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Fired Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzFiredTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzFiredTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzFiredTriggers'
     //     },
     //     {
@@ -528,7 +528,7 @@ export class EndpointData {
     //       'type': 'QrtzJobDetails',
     //       'icon': null,
     //       'description': 'Qrtz Job Details',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzJobDetailsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzJobDetailsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzJobDetails'
     //     },
     //     {
@@ -538,10 +538,10 @@ export class EndpointData {
     //       'type': 'QrtzLocks',
     //       'icon': null,
     //       'description': 'Qrtz Locks',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzLocksUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzLocksUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzLocks',
-    //       'actions' : []        
-    //     },        
+    //       'actions' : []
+    //     },
     //     {
     //       'name': 'qrtzPausedTriggerGrps',
     //       'group': 'Unknown',
@@ -549,7 +549,7 @@ export class EndpointData {
     //       'type': 'QrtzPausedTriggerGrps',
     //       'icon': null,
     //       'description': 'Qrtz Paused Trigger Grps',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzPausedTriggerGrpsUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzPausedTriggerGrpsUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzPausedTriggerGrps',
     //       'actions' : []
     //     },
@@ -560,7 +560,7 @@ export class EndpointData {
     //       'type': 'QrtzSchedulerState',
     //       'icon': null,
     //       'description': 'Qrtz Scheduler State',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSchedulerStateUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSchedulerStateUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSchedulerState'
     //     },
     //     {
@@ -570,7 +570,7 @@ export class EndpointData {
     //       'type': 'QrtzSimpleTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Simple Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpleTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpleTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpleTriggers'
     //     },
     //     {
@@ -580,7 +580,7 @@ export class EndpointData {
     //       'type': 'QrtzSimpropTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Simprop Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpropTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpropTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzSimpropTriggers'
     //     },
     //     {
@@ -590,7 +590,7 @@ export class EndpointData {
     //       'type': 'QrtzTriggers',
     //       'icon': null,
     //       'description': 'Qrtz Triggers',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzTriggersUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzTriggersUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/qrtzTriggers'
     //     },
     //     {
@@ -600,7 +600,7 @@ export class EndpointData {
     //       'type': 'RegulatoryBalAuth',
     //       'icon': null,
     //       'description': 'Regulatory Bal Auth',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryBalAuthUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryBalAuthUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryBalAuth'
     //     },
     //     {
@@ -610,7 +610,7 @@ export class EndpointData {
     //       'type': 'RegulatoryFilingType',
     //       'icon': null,
     //       'description': 'Regulatory Filing Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryFilingTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryFilingTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryFilingType'
     //     },
     //     {
@@ -620,7 +620,7 @@ export class EndpointData {
     //       'type': 'RegulatoryHub',
     //       'icon': null,
     //       'description': 'Regulatory Hub',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryHubUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryHubUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryHub'
     //     },
     //     {
@@ -630,7 +630,7 @@ export class EndpointData {
     //       'type': 'RegulatoryProduct',
     //       'icon': null,
     //       'description': 'Regulatory Product',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryProductUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryProductUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryProduct'
     //     },
     //     {
@@ -640,7 +640,7 @@ export class EndpointData {
     //       'type': 'RegulatoryReport',
     //       'icon': null,
     //       'description': 'Regulatory Report',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReportUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReportUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/regulatoryReport'
     //     },
     //     {
@@ -650,7 +650,7 @@ export class EndpointData {
     //       'type': 'RgltChrgtypeProdXref',
     //       'icon': null,
     //       'description': 'Rglt Chrgtype Prod Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgtypeProdXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgtypeProdXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgtypeProdXref'
     //     },
     //     {
@@ -660,7 +660,7 @@ export class EndpointData {
     //       'type': 'RgltChrgCompTypeXref',
     //       'icon': null,
     //       'description': 'Rglt Chrg Comp Type Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgCompTypeXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgCompTypeXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltChrgCompTypeXref'
     //     },
     //     {
@@ -670,7 +670,7 @@ export class EndpointData {
     //       'type': 'RgltMktTimezone',
     //       'icon': null,
     //       'description': 'Rglt Mkt Timezone',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezoneUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezoneUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltMktTimezone'
     //     },
     //     {
@@ -680,7 +680,7 @@ export class EndpointData {
     //       'type': 'RgltPtcptChrgtypeXref',
     //       'icon': null,
     //       'description': 'Rglt Ptcpt Chrgtype Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptChrgtypeXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptChrgtypeXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptChrgtypeXref'
     //     },
     //     {
@@ -690,7 +690,7 @@ export class EndpointData {
     //       'type': 'RgltPtcptTxPtLoc',
     //       'icon': null,
     //       'description': 'Rglt Ptcpt Tx Pt Loc',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptTxPtLocUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptTxPtLocUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltPtcptTxPtLoc'
     //     },
     //     {
@@ -700,7 +700,7 @@ export class EndpointData {
     //       'type': 'RgltStmntFilingXref',
     //       'icon': null,
     //       'description': 'Rglt Stmnt Filing Xref',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltStmntFilingXrefUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltStmntFilingXrefUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltStmntFilingXref'
     //     },
     //     {
@@ -710,7 +710,7 @@ export class EndpointData {
     //       'type': 'RgltTxPtLoc',
     //       'icon': null,
     //       'description': 'Rglt Tx Pt Loc',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltTxPtLocUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltTxPtLocUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/rgltTxPtLoc'
     //     },
     //     {
@@ -720,7 +720,7 @@ export class EndpointData {
     //       'type': 'SecurityApp',
     //       'icon': null,
     //       'description': 'Security App',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAppUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAppUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityApp'
     //     },
     //     {
@@ -730,7 +730,7 @@ export class EndpointData {
     //       'type': 'SecurityAppRole',
     //       'icon': null,
     //       'description': 'Security App Role',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAppRoleUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAppRoleUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAppRole'
     //     },
     //     {
@@ -740,7 +740,7 @@ export class EndpointData {
     //       'type': 'SecurityAuthCode',
     //       'icon': null,
     //       'description': 'Security Auth Code',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAuthCodeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAuthCodeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityAuthCode'
     //     },
     //     {
@@ -750,7 +750,7 @@ export class EndpointData {
     //       'type': 'SecurityRole',
     //       'icon': null,
     //       'description': 'Security Role',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRole'
     //     },
     //     {
@@ -760,7 +760,7 @@ export class EndpointData {
     //       'type': 'SecurityRoleRelation',
     //       'icon': null,
     //       'description': 'Security Role Relation',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleRelationUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleRelationUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleRelation'
     //     },
     //     {
@@ -770,7 +770,7 @@ export class EndpointData {
     //       'type': 'SecurityRoleType',
     //       'icon': null,
     //       'description': 'Security Role Type',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleTypeUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleTypeUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityRoleType'
     //     },
     //     {
@@ -780,7 +780,7 @@ export class EndpointData {
     //       'type': 'SecurityToken',
     //       'icon': null,
     //       'description': 'Security Token',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityTokenUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityTokenUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityToken'
     //     },
     //     {
@@ -790,7 +790,7 @@ export class EndpointData {
     //       'type': 'SecurityUser',
     //       'icon': null,
     //       'description': 'Security User',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUser'
     //     },
     //     {
@@ -800,7 +800,7 @@ export class EndpointData {
     //       'type': 'SecurityUserLog',
     //       'icon': null,
     //       'description': 'Security User Log',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserLogUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserLogUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserLog'
     //     },
     //     {
@@ -810,7 +810,7 @@ export class EndpointData {
     //       'type': 'SecurityUserRole',
     //       'icon': null,
     //       'description': 'Security User Role',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserRoleUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserRoleUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/securityUserRole'
     //     },
     //     {
@@ -820,7 +820,7 @@ export class EndpointData {
     //       'type': 'Timezone',
     //       'icon': null,
     //       'description': 'Timezone',
-    //       'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezoneUi',
+    //       'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezoneUi',
     //       'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/timezone'
     //     }
     // ];

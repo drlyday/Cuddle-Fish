@@ -13,6 +13,6 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Models
         public string Description { get; set; }
         public string SelectorValue { get; set; }
         public string PrimaryKey { get; set; }
-        public List<PropertyMetadata> metadata { get; set; }
+        public List<PropertyMetadata> metadata { get; set; } = new List<PropertyMetadata>();
     }
 }

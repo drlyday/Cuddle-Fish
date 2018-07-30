@@ -16,13 +16,19 @@ using Newtonsoft.Json.Serialization;
 namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
 {
     [AllowCrossSiteJson]
-    public class MoviesController : ApiController
+    public class MoviesAngularController : ApiController
     {
         private MovieStoreDbContext db = new MovieStoreDbContext();
 
         // GET: api/Movies
         [AllowCrossSiteJson]
         public IQueryable<Movie> GetMovies()
+        {
+            return db.Movies;
+        }
+
+        [AllowCrossSiteJson]
+        public IQueryable<Movie> PostMovies()
         {
             return db.Movies;
         }
@@ -43,7 +49,7 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
 
         // GET: api/MovieMetadata
         [AllowCrossSiteJson]
-        [Route("api/metadata/movies")]
+        [Route("api/metadata/moviesangular")]
         [HttpGet]
         public IHttpActionResult MovieMetadata()
         {
@@ -123,20 +129,20 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Movies
-        [ResponseType(typeof(Movie))]
-        public IHttpActionResult PostMovie(Movie movie)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Movies
+        //[ResponseType(typeof(Movie))]
+        //public IHttpActionResult PostMovie(Movie movie)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Movies.Add(movie);
-            db.SaveChanges();
+        //    db.Movies.Add(movie);
+        //    db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = movie.ID }, movie);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = movie.ID }, movie);
+        //}
 
         // DELETE: api/Movies/5
         [ResponseType(typeof(Movie))]

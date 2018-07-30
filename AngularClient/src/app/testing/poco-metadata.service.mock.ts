@@ -1,6 +1,6 @@
-import { PocoBaseMetadata } from "../metadata/poco-base";
-import { PocoMetadataMock } from "../testing/poco-metamodel.data"
-import { PocoMetadataService } from "../metadata/poco-metadata.service";
+import { PocoBaseMetadata } from '../metadata/poco-base';
+import { PocoMetadataMock } from '../testing/poco-metamodel.data'
+import { PocoMetadataService } from '../metadata/poco-metadata.service';
 
 import { Injectable }    from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
@@ -15,7 +15,7 @@ import { SecurityService } from '../security/security.service';
 import { SecurityTokenService } from '../security/security.token.service';
 
 export class PocoMetadataServiceMock {
-    
+
     metamodel: PocoBaseMetadata;
 
     readonly http: Http;
@@ -24,7 +24,7 @@ export class PocoMetadataServiceMock {
     readonly tokenSecurityService: SecurityTokenService;
     readonly snackBar: MatSnackBar;
 
-    getPocoMetamodel(endpointName: string): Promise<PocoBaseMetadata> {        
+    getPocoMetamodel(endpointName: string): Promise<PocoBaseMetadata> {
         const pocoMetadataMock: PocoMetadataMock = new PocoMetadataMock();
         return Promise.resolve(pocoMetadataMock[endpointName]);
         //return Promise.resolve(pocoMetadataMock.businessTypeMetadataMock);
@@ -36,23 +36,24 @@ export class PocoMetadataServiceMock {
         if (!endpoint) {
             return undefined;
         }
-        const endpointurl = endpoint.uiEndPoint;
+        const endpointurl = endpoint.uiEndpoint;
 
         const url = endpointurl + '/roles';
 
         const headers = this.tokenSecurityService.httpAuthorizationHeader;
         const options = new RequestOptions({ headers: headers });
-        const poco = Promise.resolve(this.http.get(url, options).timeout(6000)
+        const roles = Promise.resolve(this.http.get(url, options).timeout(6000)
         .toPromise()
         .then(response => this.handleSecurityRoleResponse(response))
         .catch(this.handleSecurityRolesError));
     // }
-
-        return new Promise(resolve => resolve(poco));
+        const fixedRoles = {'roles' : ['Admin', 'Create', 'Delete', 'Update', 'Execute', 'Read'] }
+        return new Promise(resolve => fixedRoles);
+        //return new Promise(resolve => resolve(roles));
     }
 
     getPocoMetaKey(pocoMetadata: PocoBaseMetadata) {
-    return pocoMetadata.primaryKey;
+      return pocoMetadata.primaryKey;
     }
 
     handleSecurityRoleResponse(response: any) {
@@ -68,7 +69,7 @@ export class PocoMetadataServiceMock {
 
     handleSecurityRolesError(error: any): Promise<any> {
     console.error('Error retrieving Security Roles', error.message || error);
-    
+
     return new Promise(resolve => resolve(''));
     }
 

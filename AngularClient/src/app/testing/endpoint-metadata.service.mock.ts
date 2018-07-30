@@ -18,11 +18,11 @@ export class EndpointMetadataServiceMock {
         'icon': null,
          type: '',
         'description': 'Business Type',
-        'uiEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
+        'uiEndpoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessTypeUi',
         'serviceEndPoint': 'http://WU2P203390001.CD2.BP.COM:9002/api/businessType',
         'actions' : []
     };
-  
+
 
     getEndPointMetadata(): Promise<IEndPointMetadata[]> {
         const endPointdata = new EndpointData();
@@ -55,7 +55,7 @@ export class EndpointMetadataServiceMock {
 
 addHeaders(headers: Headers) { }
 
-getOptions() { 
+getOptions() {
     const options = new RequestOptions({ headers: this.httpHeaders });
     return options;
 }
@@ -88,7 +88,7 @@ onlyUnique(value, index, self) {
     // this.isloading = false;
     const action = 'Loading Endpoints';
     console.error('ENDPOINT METADATA SERVICE RESPONSE !!! ERROR !!!', error); // for demo purposes only
-    this.snackBar.open(action + ' error : ' + error.message, 'OK');    
+    this.snackBar.open(action + ' error : ' + error.message, 'OK');
   }
 
   openSnackBar(message: string, action: string) {

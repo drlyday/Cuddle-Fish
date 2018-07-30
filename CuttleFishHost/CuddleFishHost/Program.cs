@@ -69,8 +69,12 @@ namespace PDMAdmin
           {
             host.Run();
           }
-      //BuildWebHost(args).Run();
-    }
+
+          Process.Start("chrome.exe", string.Format("--incognito  http://localhost:{0}/MovieStore/Movies ", port));
+
+
+          //BuildWebHost(args).Run();
+        }
 
         public static IWebHost BuildWebHost(string[] args)
       {
