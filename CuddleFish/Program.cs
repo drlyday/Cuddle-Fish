@@ -12,7 +12,7 @@ namespace CuddleFishConsole
             {
                 FileName = "cmd",
                 RedirectStandardInput = true,
-                WorkingDirectory = "..\\..\\..\\..\\AngularClient"
+                WorkingDirectory = "..\\AngularClient"
             };
             var pNpmRunDist = Process.Start(psiNpmRunDist);
             //pNpmRunDist.StandardInput.WriteLine("npm run dist & exit");

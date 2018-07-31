@@ -18,7 +18,8 @@ namespace MovieStore.Handlers
   {
     public void Handle(IMessage message)
     {
-      throw new NotImplementedException();
+        Console.WriteLine($"MessageDispatcher<> Received {message.Name}.");
+        InnerHandle((T)message);
     }
 
     protected abstract void InnerHandle(T message);
