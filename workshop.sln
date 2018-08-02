@@ -13,11 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Accountin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomain", "MovieStoreDomain\MovieStoreDomain.csproj", "{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuttlefishServiceHost", "CuttleFishHost\CuddleFishHost\CuttlefishServiceHost.csproj", "{88D8BB9E-B9BD-4291-B13A-5C033267D080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuttlefishClientHost", "CuttleFishHost\CuddleFishHost\CuttlefishClientHost.csproj", "{88D8BB9E-B9BD-4291-B13A-5C033267D080}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishCliConsole", "CuddleFish\CuddleFishCliConsole.csproj", "{3FB916F7-07BE-4924-BCCE-1496ADE661FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuddleFishServices", "CuddleFishServices\CuddleFishServices.csproj", "{394E2A15-377D-4C9C-8FD1-456280C0E56E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishServices", "CuddleFishServices\CuddleFishServices.csproj", "{394E2A15-377D-4C9C-8FD1-456280C0E56E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServices", "..\b_Web\WebServices.csproj", "{0171F982-58AA-4BBA-9E2B-871B2CAF665D}"
 EndProject
