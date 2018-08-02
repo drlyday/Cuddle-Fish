@@ -9,15 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomainTests", "Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "workshop.migrations\Migrations.csproj", "{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Accounting\Infrastructure.csproj", "{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreDomain", "MovieStoreDomain\MovieStoreDomain.csproj", "{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuttlefishClientHost", "CuttleFishHost\CuddleFishHost\CuttlefishClientHost.csproj", "{88D8BB9E-B9BD-4291-B13A-5C033267D080}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishCliConsole", "CuddleFish\CuddleFishCliConsole.csproj", "{3FB916F7-07BE-4924-BCCE-1496ADE661FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishServices", "CuddleFishServices\CuddleFishServices.csproj", "{394E2A15-377D-4C9C-8FD1-456280C0E56E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuddleFishEndpointService", "CuddleFishServices\CuddleFishEndpointService.csproj", "{394E2A15-377D-4C9C-8FD1-456280C0E56E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServices", "..\b_Web\WebServices.csproj", "{0171F982-58AA-4BBA-9E2B-871B2CAF665D}"
 EndProject
@@ -53,14 +51,6 @@ Global
 		{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}.Release|x64.ActiveCfg = Release|Any CPU
 		{79C3E1F6-5747-4B0A-84C1-BD6F50A2FAEA}.Release|x64.Build.0 = Release|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Debug|x64.Build.0 = Debug|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Release|x64.ActiveCfg = Release|Any CPU
-		{CFB9A197-CBDA-4CB7-9893-240A6A2A9527}.Release|x64.Build.0 = Release|Any CPU
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D644FA89-6E62-4A5D-AAE0-FCC7A84D4A60}.Debug|x64.ActiveCfg = Debug|Any CPU

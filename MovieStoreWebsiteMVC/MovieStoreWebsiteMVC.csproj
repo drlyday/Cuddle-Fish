@@ -380,6 +380,7 @@
     <Content Include="Scripts\foundation.min.js" />
     <Content Include="Areas\MovieStore\Views\Auth\Auth.cshtml" />
     <Content Include="Areas\MovieWarehouse\Views\web.config" />
+    <Content Include="Microsoft.PowerShell_profile.ps1" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -863,7 +864,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52306</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

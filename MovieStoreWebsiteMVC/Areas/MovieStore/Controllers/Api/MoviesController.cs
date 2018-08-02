@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using MovieStore;
 using MovieStoreDomain.Models.Movies;
+using MovieStoreWebsiteMVC.Areas.MovieStore.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -47,7 +48,7 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
         [HttpGet]
         public IHttpActionResult MovieMetadata()
         {
-            var header = new Models.MetadataHeader()
+            MetadataHeader header = new MetadataHeader()
             {
                 Name = "Movie",
                 Type = "Movie",
@@ -57,35 +58,30 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
                 PrimaryKey = "ID"
             };
             var movie = new Movie();
-            var list = movie.GetType()
-                            .GetProperties()
-                            .Select(x => new Models.PropertyMetadata() {
-                                Value = x.Name,
-                                Key = true,
-                                Label = x.Name,
-                                Description = "",
-                                Type = "text",
-                                Required = true,
-                                Order = 0,
-                                Gridshow = true,
-                                color = "blue"});
+
+
+            IEnumerable<PropertyMetadata> listOfPropertiesInMovieObject = movie.GetType()
+                                                                               .GetProperties()
+                                                                               .Select(x => new PropertyMetadata() {
+                                                                                   Value = x.Name,
+                                                                                   Key = true,
+                                                                                   Label = x.Name,
+                                                                                   Description = "",
+                                                                                   Type = "text",
+                                                                                   Required = true,
+                                                                                   Order = 0,
+                                                                                   Gridshow = true,
+                                                                                   color = "blue"
+                                                                               });
             
-            header.metadata.AddRange(list);
+            header.metadata.AddRange(listOfPropertiesInMovieObject);
             
             if (movie == null)
             {
                 return NotFound();
             }
-
-            //var rtv = JsonConvert.SerializeObject(
-            //        header,
-            //        Formatting.Indented,
-            //        new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }
-            //      );
-
-            return Json(header, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-
             
+            return Json(header, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });            
         }
 
         // PUT: api/Movies/5
