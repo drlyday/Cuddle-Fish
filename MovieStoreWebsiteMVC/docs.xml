@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MovieStoreWebsiteMVC</name>
+    </assembly>
+    <members>
+        <member name="M:MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api.MoviesController.GetMovie(System.Int32)">
+            <summary>
+              This synchronous request returns an array of all workspaces available.  
+            </summary>
+            <remarks>
+              By default, this is both active and inactive.  Active means it’s currently open in an instance of IAM.  Inactive means it’s serialized to disk on the server and will need to be loaded before any requests are sent to it. 
+               
+              For active workspaces the properties will include the status (“Busy” or “Idle”). This should be called after all other asynchronous GET/POST/PUT/PATCH/DELETE requests that operate on the workspace.  
+              Some of these requests, being asynchronous, may require unknown amounts of time to finish processing.  
+              Call this repeatedly until the status is “idle” before issuing the next request.
+              
+              If successful the response payload will contain a JSON “workspaces” object which is an array of workspaces.  The array will be empty if no workspaces are available.   
+            <!-- 
+            <p>  
+                 // Contents of JSON Body
+                 {  
+                    "id":"8A6E5179-E1F5-4C4C-9AB7-F27938D3FEA8",  
+                    "name":"My New Workspace 1",  
+                    "isActive":true,  
+                    "status":"Idle"  
+                 },  
+                 {   
+                    "id":"{9C3D8530-3652-4025-B577-AB8E6F194186}",  
+                    "name":" My New Workspace 2",  
+                    "isActive":false  
+                 }  
+            </p>  
+            -->
+            
+              The status can be either the “Idle” or “Busy” state.It’s a string rather than a Boolean to indicate whether it’s busy so that we can potentially expand it with other states such as “Solving”.  
+            </remarks>
+            <example>description</example>  
+            <param name="id">is an optional Boolean parameter to filter the list to only those that are active. More than one workspace can be active if multiple copies of IAM have been started.</param>  
+        </member>
+        <member name="M:aspnet5.Startup.DocumentationConfiguration(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Set up Swagger UI for the documentation.
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="P:aspnet5.Startup.DocumentationUIConfiguration">
+            <summary>
+            Configure the look of the Documentation.
+            </summary>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.AddRangeUnique``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+                Adds a range of value uniquely to a collection and returns the amount of values added.
+            </summary>
+            <typeparam name = "T">The generic collection value type.</typeparam>
+            <param name = "collection">The collection.</param>
+            <param name = "values">The values to be added.</param>
+            <returns>The amount if values that were added.</returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.AddUnique``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+                Adds a value uniquely to to a collection and returns a value whether the value was added or not.
+            </summary>
+            <typeparam name = "T">The generic collection value type</typeparam>
+            <param name = "collection">The collection.</param>
+            <param name = "value">The value to be added.</param>
+            <returns>Indicates whether the value was added or not</returns>
+            <example>
+                <code>
+                    list.AddUnique(1); // returns true;
+                    list.AddUnique(1); // returns false the second time;
+                </code>
+            </example>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.Append``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Appends individual items to a sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sequence"></param>
+            <param name="otherStuff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.Consume``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Consumes the elements in a sequence. See remarks for more information.
+            </summary>
+            <remarks>
+            This method essentially does nothing except to eagerly evaluate the sequence. There are times when you simply
+            want to iterate the sequence but do not want to store or do anything additional with the elements that are in
+            the sequence. Prefer this to, for example, <c>var dummy = sequence.ToList()</c> or simply <c>sequence.ToList()</c>.
+            </remarks>
+            <typeparam name="T">The type of the items in the sequence.</typeparam>
+            <param name="source">The sequence to consume.</param>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.Distinct``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+               Get Distinct
+            </summary>
+            <param name = "source"></param>
+            <param name = "expression"></param>
+            <typeparam name = "T"></typeparam>
+            <typeparam name = "TKey"></typeparam>
+            <returns></returns>
+            <remarks>
+                Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Adds an Extension Method to Determine if a Collection has distinct values based on a property defined by a lambda expression
+            </summary>
+            <typeparam name="TSource">Collection</typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="source"></param>
+            <param name="keySelector">Lambda Expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.Do``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Applies an action to each element of a sequence and yields the sequence.
+            </summary>
+            <typeparam name="T">The type of the elements in the sequence.</typeparam>
+            <param name="source">The sequence to enumerate.</param>
+            <param name="action">The action to apply to each item in the sequence.</param>
+            <exception cref="T:System.ArgumentNullException">One of the arguments is null.</exception>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Applies an action to each element of a sequence.
+            </summary>
+            <typeparam name="T">The type of the elements in the sequence.</typeparam>
+            <param name="source">The sequence to enumerate.</param>
+            <param name="action">The action to apply to each item in the sequence.</param>
+            <exception cref="T:System.ArgumentNullException">One of the arguments is null.</exception>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IfNotNull``2(``0,System.Func{``0,``1})">
+            <summary>
+              Returns a selected value when the source is not null; null otherwise.
+            </summary>
+            <typeparam name = "T">Type of the source object.</typeparam>
+            <typeparam name = "TInner">Type of the object which the selector returns.</typeparam>
+            <param name = "source">The source for this extension method.</param>
+            <param name = "selector">A function which given the source object, returns a selected value.</param>
+            <returns>The selected value when source is not null; null otherwise.</returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IndexOf``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+                Return the index of the first matching item or -1.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "list">The list.</param>
+            <param name = "comparison">The comparison.</param>
+            <returns>The item index</returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IsEquivalentTo``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            Determines whether two sequences are equivalent (optionally to the end of the shortest one).
+            </summary>
+            <typeparam name="T">The type of the items in the sequence.</typeparam>
+            <param name="first">The first sequence.</param>
+            <param name="second">The second sequence.</param>
+            <param name="useShortestSequenceLength">Specifies whether the equivalence test should only proceed up to the length of the shortest sequence.</param>
+            <returns>
+              <c>true</c> if the the two sequences are equivalent; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IsEquivalentTo``2(System.Collections.Generic.IReadOnlyDictionary{``0,``1},System.Collections.Generic.IReadOnlyDictionary{``0,``1})">
+            <summary>
+            Determines whether two read-only diectionaries are equivalent (have the same keys, and for each matched key, the same value).
+            </summary>
+            <typeparam name="TKey">The type of the keys.</typeparam>
+            <typeparam name="TValue">The type of the items in the dictionary.</typeparam>
+            <param name="first">The first dictionary.</param>
+            <param name="second">The second dictionary.</param>
+            <returns>
+              <c>true</c> if the the two dictionaries are equivalent; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IsEquivalentTo``1(``0[],``0[],System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Determines whether two arrays are equivalent from their given starting offsets, optionally considering only the number of items of the shortest sub-array.
+            </summary>
+            <typeparam name="T">The type of the items in the sequence.</typeparam>
+            <param name="first">The first array to compare.</param>
+            <param name="second">The second array to compare.</param>
+            <param name="firstOffset">The offset in the first array from which to begin comparison.</param>
+            <param name="secondOffset">The offset in the second array from which to begin comparison.</param>
+            <param name="useShortestArrayLength">Specifies whether the equivalence test should only proceed up to the length of the shortest sequence.</param>
+            <returns>
+              <c>true</c> if the the two (sub)arrays are equivalent; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.IsNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Validates that the <paramref name="source"/> is not null and contains items.
+            </summary>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.NonEmptyAll``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Like LINQ's <see cref="M:System.Linq.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/> but returns <see langword="false"/> if there are no items instead of
+            <see langword="true"/>.
+            </summary>
+            <typeparam name="T">The type of items in the sequence.</typeparam>
+            <param name="sequence">The sequences to check.</param>
+            <param name="predicate">The predicate to determine allness.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.Prepend``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Prepends individual items to a sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sequence"></param>
+            <param name="otherStuff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.RemoveAll``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})">
+            <summary>
+            Remove item from a list
+            </summary>
+            <param name = "source"></param>
+            <param name = "predicate"></param>
+            <typeparam name = "T"></typeparam>
+            <returns></returns>
+            <remarks>
+                Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:Foundation.Coding.Extensions.CollectionExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+                Creates a string from the sequence by concatenating the result
+                of the specified string selector function for each element.
+            </summary>
+            <param name="separator">The string which separates each concatenated item.</param>
+            <param name="source">Enumerable to concatenate</param>
+            <param name="stringSelector">ToString projector</param>
+        </member>
+    </members>
+</doc>

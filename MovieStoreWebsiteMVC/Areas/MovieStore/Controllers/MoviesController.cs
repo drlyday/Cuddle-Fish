@@ -19,6 +19,7 @@ namespace aspnet5.Areas.MovieStore.Controllers
         private readonly MovieStoreDbContext _db;
         private readonly IMovieFilter _filter;
 
+
         public MoviesController(DynamicHandler handler, MovieStoreDbContext db, IMovieFilter filter)
         {
             _handler = handler;

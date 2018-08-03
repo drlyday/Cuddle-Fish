@@ -93,7 +93,7 @@ function ghistory{
 
 function gokarma{ 
 
-                karma start C:\Users\lyd68j\Source\Repos\Estream\Source\Estream.Web\karma.conf.js.in.noCoverage --browsers=Chrome --single-run=false --debug 
+                karma start "$projectRootPath\Estream.Web\karma.conf.js.in.noCoverage" --browsers=Chrome --single-run=false --debug 
 
 } 
 
@@ -233,7 +233,7 @@ function npmproxy-set{
 
 function runhost-withbuild { 
 
-    cd C:\Users\dlyday\Source\examples\aspnet5\CuddleFishServices 
+    cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
 
     pwd 
 
@@ -247,7 +247,7 @@ function runhost-withbuild {
 
 function runhost { 
 
-    cd C:\Users\dlyday\Source\examples\aspnet5\CuddleFishServices 
+    cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
 
     pwd 
 
@@ -263,7 +263,7 @@ function runhost {
 
 function buildang-prod { 
 
-    cd C:\Users\dlyday\Source\examples\aspnet5\; 
+    cd $projectRootPath"\AngularClient"
 
     pwd 
 
@@ -279,13 +279,13 @@ function copydist-to-host {
 
     "Copying files" 
 
-    cd C:\Users\dlyday\Source\examples\aspnet5\CuddleFishServices 
+    cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
 
     md -Force ./wwwroot   
 
-    $source= "C:\Users\dlyday\Source\examples\aspnet5\AngularClient\dist" 
+    $source= "$projectRootPath\AngularClient\dist"
 
-    $destination= "C:\Users\dlyday\Source\examples\aspnet5\CuddleFishServices\wwwroot" 
+    $destination= "$projectRootPath\CuttleFishHost\CuddleFishHost\wwwroot"
 
     Write-Host "Copying angular dist to Asp.Net Host " -BackgroundColor "YELLOW" -ForegroundColor "Black" 
 
@@ -307,7 +307,7 @@ function publishcorehost{
 
     "Publishing Core Host in Release mode" 
 
-    cd C:\Users\dlyday\Source\examples\aspnet5\CuttleFishHost\CuddleFishHost
+    cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
 
     dotnet publish -c Release 
 
@@ -331,11 +331,9 @@ function buildang-runhost{
 
 function move-host-files-to-share(){ 
 
-    $source= "C:\Users\dlyday\Source\examples\aspnet5\CuddleFishServices\bin\Release\net461\publish" 
+    $source= "$projectRootPath\CuddleFishServices\bin\Release\net461\publish" 
 
-    $destination= "I:\ngg\ISTDCT\lyday\PDM-AdminUI" 
-
-  
+    $destination= "$projectRootPath\cuddlefishdeployment"   
 
     Write-Host "Moving files to networkshare " -BackgroundColor "YELLOW" -ForegroundColor "Black" 
 
@@ -545,7 +543,7 @@ function dbkill {
 
   
 
-Set-Location 'C:\Users\dlyday\Source\examples\aspnet5\AngularClient' 
+Set-Location "$projectRootPath\AngularClient"
 
 "You are now entering PowerShell : " + $env:Username 
 
