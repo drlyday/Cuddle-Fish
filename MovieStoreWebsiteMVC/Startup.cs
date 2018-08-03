@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using System.Net.Http.Formatting;
+using System.Diagnostics;
 
 [assembly: OwinStartupAttribute(typeof(aspnet5.Startup))]
 namespace aspnet5
@@ -71,6 +72,9 @@ namespace aspnet5
 
          app.UseWebApi(config);
 
+      
+         Process.Start("chrome.exe", string.Format("--incognito {0}", "http://localhost:52306/swagger/ui/index"));
+
       }
 
 
@@ -119,13 +123,13 @@ namespace aspnet5
             // Use the "DocumentTitle" option to change the Document title.
             // Very helpful when you have multiple Swagger pages open, to tell them apart.
 
-            c.DocumentTitle("IAM Web Service");
+            c.DocumentTitle("Movie Store Docs");
 
             // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.
             // The file must be included in your project as an "Embedded Resource", and then the resource's
             // "Logical Name" is passed to the method as shown below.
 
-            //c.InjectStylesheet(Assembly.GetAssembly(typeof(Startup)), string.Format("{0}.{1}", typeof(Startup).Namespace, "Web API Documentation.css"));
+            c.InjectStylesheet(Assembly.GetAssembly(typeof(Startup)), string.Format("{0}.{1}", typeof(Startup).Namespace, "Web API Documentation.css"));
             };
          }
       }
