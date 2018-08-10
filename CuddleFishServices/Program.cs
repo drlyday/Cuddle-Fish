@@ -1,28 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.WindowsServices;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace CuddleFishServices
 {
-    public class Program
+   public class Program
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-        }
+            bool isService = !(Debugger.IsAttached || args.Contains("--console"));
 
-        public static IWebHost BuildWebHost(string[] args)
-        {
+            var pathToContentRoot = Directory.GetCurrentDirectory();
+            if (isService)
+            {
+               var pathToExe = Process.GetCurrentProcess().MainModule.FileName;
+               pathToContentRoot = Path.GetDirectoryName(pathToExe);
+            }
+
+            System.IO.Directory.SetCurrentDirectory(System.AppDomain.CurrentDomain.BaseDirectory);
+
             var configBuilder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
+                   .SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json");
 
             var config = configBuilder.Build();
             var port = int.Parse(config["port"]);
@@ -30,13 +34,25 @@ namespace CuddleFishServices
             var urlPrefix = config["urlPrefix"];
 
             var host = new WebHostBuilder()
-                      .UseKestrel(options =>
-                      {
-                          options.Listen(IPAddress.Any, port);
-                      })
-                    .UseStartup<Startup>()
-                    .Build();
-            return host;
-        }
-    }
+                        .UseKestrel(options =>
+                        {
+                           options.Listen(IPAddress.Any, port);
+                        })
+                        .UseContentRoot(pathToContentRoot)
+                       .UseStartup<Startup>()
+                       .Build();
+
+            if (isService)
+            {
+               host.RunAsService();
+            }
+            else
+            {
+               host.Run();
+            }
+
+            Process.Start("chrome.exe", string.Format("--incognito  http://localhost:{0}/MovieStore/Movies ", port));
+
+      }
+   }
 }

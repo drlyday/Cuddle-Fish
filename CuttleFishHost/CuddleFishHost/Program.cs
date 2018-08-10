@@ -4,16 +4,12 @@ using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.AspNetCore.Hosting.WindowsServices;
 using Microsoft.Extensions.Configuration;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
-using AuthenticationSchemes = Microsoft.AspNetCore.Server.HttpSys.AuthenticationSchemes;
 
 namespace PDMAdmin
 {
-    public class Program
+   public class Program
     {
       public static void Main(string[] args)
       {
@@ -28,8 +24,10 @@ namespace PDMAdmin
 
         System.IO.Directory.SetCurrentDirectory(System.AppDomain.CurrentDomain.BaseDirectory);
 
-        var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-          .AddJsonFile("appsettings.json");
+        var configBuilder = new ConfigurationBuilder()
+                            .SetBasePath(Directory.GetCurrentDirectory())
+                            .AddJsonFile("appsettings.json");
+
         var config = configBuilder.Build();
         var port = int.Parse(config["port"]);
         var url = config["url"];
