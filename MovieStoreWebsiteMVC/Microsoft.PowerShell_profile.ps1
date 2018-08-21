@@ -6,7 +6,9 @@ Set-Alias ssh-add "$env:ProgramFiles\git\usr\bin\ssh-add.exe"
 
 $projectRootPath = "C:\Users\dlyday\Source\examples\aspnet5"
 
-Import-Module PsGet 
+#Set-PSDebug -Trace 1  
+
+Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-9bda399\src\posh-git.psd1'
   
 
 function global:prompt { 
@@ -29,8 +31,6 @@ function global:prompt {
 
 } 
 
-  
-
 function killTasks{ 
 
                 taskkill /F /IM MSBuild.exe 
@@ -46,8 +46,6 @@ function killTasks{
                 taskkill /F /IM NUnit* 
 
 } 
-
-  
 
 function gac([string]$message = ""){ 
 
@@ -65,15 +63,11 @@ function gac([string]$message = ""){
 
 } 
 
-  
-
 function pullit{ 
 
                 git pull 
 
 } 
-
-  
 
 function gs{ 
 
@@ -81,23 +75,17 @@ function gs{
 
 } 
 
-  
-
 function ghistory{ 
 
                 git log --author 'lyd68j' 
 
 } 
 
-  
-
 function gokarma{ 
 
                 karma start "$projectRootPath\Estream.Web\karma.conf.js.in.noCoverage" --browsers=Chrome --single-run=false --debug 
 
 } 
-
-  
 
 function list { 
 
@@ -145,8 +133,6 @@ function list {
 
 } 
 
-  
-
 function npminstall{ 
 
   npm config delete -g proxy 
@@ -160,8 +146,6 @@ function npminstall{
   npm config set https-proxy http://amrproxy.bp.com:80 
 
 } 
-
-  
 
 function npmupdate{ 
 
@@ -177,8 +161,6 @@ function npmupdate{
 
 } 
 
-  
-
 function npmupdatenpm{ 
 
   npm config delete -g proxy 
@@ -193,8 +175,6 @@ function npmupdatenpm{
 
 } 
 
-  
-
 function npmproxy-delete{ 
 
   npm config delete -g proxy 
@@ -203,23 +183,17 @@ function npmproxy-delete{
 
 } 
 
-  
-
 function disable-npmconfig{ 
 
     rename C:\Users\lyd68j\.npmrc .npmrc_temp 
 
 } 
 
-  
-
 function enable-npmconfig{ 
 
     rename C:\Users\lyd68j\.npmrc_temp .npmrc 
 
 } 
-
-  
 
 function npmproxy-set{ 
 
@@ -229,8 +203,6 @@ function npmproxy-set{
 
 } 
 
-  
-
 function runhost-withbuild { 
 
     cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
@@ -239,11 +211,9 @@ function runhost-withbuild {
 
     "Running Host" 
 
-    dotnet run --console 
+    Start-Process -FilePath "dotnet" -ArgumentList "run --console"
 
 } 
-
-  
 
 function runhost { 
 
@@ -253,13 +223,14 @@ function runhost {
 
     "Running Asp.Net Core Host" 
 
-    dotnet run --console --nobuild -c Release 
+    # dotnet run --console --nobuild -c Release
+    Start-Process -FilePath "dotnet" -ArgumentList "run --console --nobuild -c Release"
+
+    cd $projectRootPath"\CuddleFishServices"
+
+    Start-Process -FilePath "dotnet" -ArgumentList "run --console"
 
 } 
-
-  
-
-  
 
 function buildang-prod { 
 
@@ -273,19 +244,17 @@ function buildang-prod {
 
 } 
 
-  
-
 function copydist-to-host { 
 
     "Copying files" 
 
-    cd $projectRootPath"\CuttleFishHost\CuddleFishHost"
+    cd $projectRootPath"\CuttleFishHost\CuddleFishHost";
 
     md -Force ./wwwroot   
 
-    $source= "$projectRootPath\AngularClient\dist"
+    $source= "$projectRootPath\AngularClient\dist";
 
-    $destination= "$projectRootPath\CuttleFishHost\CuddleFishHost\wwwroot"
+    $destination= "$projectRootPath\CuttleFishHost\CuddleFishHost\wwwroot";
 
     Write-Host "Copying angular dist to Asp.Net Host " -BackgroundColor "YELLOW" -ForegroundColor "Black" 
 
@@ -297,11 +266,8 @@ function copydist-to-host {
 
     pwd 
 
-    Write-Host –NoNewLine  ""FINISHED Copying files: Confirm"" " -BackgroundColor "YELLOW" -ForegroundColor "Black"       
-
-} 
-
-  
+    Write-Host ???NoNewLine  "FINISHED Copying files: Confirm"  -BackgroundColor "YELLOW" -ForegroundColor "Black"
+}
 
 function publishcorehost{ 
 
@@ -313,10 +279,6 @@ function publishcorehost{
 
 } 
 
-  
-
-  
-
 function buildang-runhost{ 
 
     buildang-prod 
@@ -326,8 +288,6 @@ function buildang-runhost{
     runhost 
 
 } 
-
-  
 
 function move-host-files-to-share(){ 
 
@@ -345,8 +305,6 @@ function move-host-files-to-share(){
 
 } 
 
-  
-
 function askQuestion([string]$arg1){ 
 
     Write-Host $arg1 -BackgroundColor "Black" -ForegroundColor "Cyan" 
@@ -361,10 +319,6 @@ function askQuestion([string]$arg1){
 
 } 
 
-  
-
-  
-
 function buildang-buildrunhost{ 
 
     buildang-prod 
@@ -374,8 +328,6 @@ function buildang-buildrunhost{
     runhost-withbuild  
 
 } 
-
-  
 
 function publishproduction{ 
 
@@ -406,7 +358,6 @@ function publishproduction{
     "COMPLETE" 
 
 } 
-
   
 
 function test { 
@@ -418,7 +369,6 @@ function test {
     npm run test; 
 
 } 
-
   
 
 function serve { 
@@ -430,8 +380,7 @@ function serve {
     npm start 
 
 } 
-
-  
+ 
 
 function merge-check { 
 
@@ -483,6 +432,26 @@ function merge-check {
 
   
 
+function dbmigrate {
+
+	$projectRootPath
+	
+	cd $projectRootPath'\workshop.migrations\Util'
+	
+	start-process RunMigration.bat
+}
+
+function dbkill {
+
+	$projectRootPath
+	
+	cd $projectRootPath'\workshop.migrations\Util'
+	
+	start-process RoleBackToStart.bat
+}
+
+
+
 function saltpeppa{ 
 
     [console]::beep(404,350)  ##D 
@@ -521,32 +490,9 @@ function pushit{
 
                 saltpeppa 
 
-} 
-
-function dbmigrate {
-
-	$projectRootPath
-	
-	cd $projectRootPath'\workshop.migrations\Util'
-	
-	start-process RunMigration.bat
-}
-
-function dbkill {
-
-	$projectRootPath
-	
-	cd $projectRootPath'\workshop.migrations\Util'
-	
-	start-process RoleBackToStart.bat
-}
-
-  
+}   
 
 Set-Location "$projectRootPath\AngularClient"
 
-"You are now entering PowerShell : " + $env:Username 
+"You are now entering PowerShell : " + $env:Username;
 
-  
-
-Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1' 

@@ -1,6 +1,0 @@
-{
-    "clientId": "CuddleFish",
-    "authSvcUrl": "",
-    "endpointSvcUrl": "http://localhost:9004/api/endpoints",
-    "version": "1.0 BETA"
-}
