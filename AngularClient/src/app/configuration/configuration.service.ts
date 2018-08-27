@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Response, Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -32,7 +33,7 @@ export class ConfigurationService {
 // 	"version": "1.0 BETA"
 // }
 
-  constructor(private readonly http: Http) {  }
+  constructor(private readonly http: HttpClient) {  }
 
   public loadConfiguration(): Promise<Configuration> {
     if (this.configuration) {

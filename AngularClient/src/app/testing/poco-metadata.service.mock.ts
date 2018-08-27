@@ -2,8 +2,9 @@ import { PocoBaseMetadata } from '../metadata/poco-base';
 import { PocoMetadataMock } from '../testing/poco-metamodel.data'
 import { PocoMetadataService } from '../metadata/poco-metadata.service';
 
-import { Injectable }    from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
@@ -18,7 +19,7 @@ export class PocoMetadataServiceMock {
 
     metamodel: PocoBaseMetadata;
 
-    readonly http: Http;
+    readonly http: HttpClient;
     readonly endpointService: EndpointMetadataService;
     readonly securityService: SecurityService;
     readonly tokenSecurityService: SecurityTokenService;

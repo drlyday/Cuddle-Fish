@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { QuestionBase } from './question-base';
-import { Headers, Http } from '@angular/http';
+import { Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 export class DropdownEnumQuestion extends QuestionBase<string> {
   controlType = 'dropdown';

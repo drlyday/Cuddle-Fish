@@ -1,7 +1,8 @@
 // tslint:disable:import-spacing
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable }                    from 'rxjs/Observable';
 import { Subject }                       from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';

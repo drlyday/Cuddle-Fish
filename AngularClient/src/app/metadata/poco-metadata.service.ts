@@ -1,6 +1,7 @@
 // tslint:disable:import-spacing
 import { Injectable }    from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
@@ -16,7 +17,7 @@ import { SecurityData } from '../testing/security.data';
 export class PocoMetadataService {
   metamodel: PocoBaseMetadata;
 
-  constructor(readonly http: Http,
+  constructor(readonly http: HttpClient,
               readonly endpointService: EndpointMetadataService,
               readonly securityService: SecurityService,
               readonly tokenSecurityService: SecurityTokenService,

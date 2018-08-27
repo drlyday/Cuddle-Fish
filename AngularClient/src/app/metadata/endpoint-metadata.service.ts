@@ -1,6 +1,7 @@
 // tslint:disable:import-spacing
 import { Injectable }    from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { MatSnackBar } from '@angular/material';
 
@@ -16,7 +17,7 @@ export class EndpointMetadataService {
   isloading = false;
   httpHeaders = new Headers({'Content-Type': 'application/json'});
 
-  constructor(readonly http: Http,
+  constructor(readonly http: HttpClient,
               readonly configuationService: ConfigurationService,
               readonly snackBar: MatSnackBar,
               readonly securityService: SecurityService,

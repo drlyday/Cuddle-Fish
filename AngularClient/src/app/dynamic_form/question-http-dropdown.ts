@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { QuestionBase } from './question-base';
-import { Headers, Http } from '@angular/http';
+import { Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+
 import { PocoRenderingService } from '../poco_shared/poco-rendering.service';
 import { PocoMetadata } from '../metadata/pocoMetadata';
 import { PocoBaseMetadata } from '../metadata/poco-base';
@@ -18,7 +20,7 @@ export class DropdownHTTPQuestion extends QuestionBase<string> {
   refBaseMetadata: PocoBaseMetadata;
   isInitialized = false;
 
-  constructor(private http: Http, options: {} = {}, private pocoRenderingService: PocoRenderingService) {
+  constructor(private http: HttpClient, options: {} = {}, private pocoRenderingService: PocoRenderingService) {
     super(options);
     this.optionsSource = options['optionsSource'];
     this.metadata = options['metadata'];

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers,  RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 
@@ -14,7 +15,7 @@ import { PocoRestService } from './poco-rest.service';
 @Injectable()
 export class ActionsService extends PocoRestService {
 
-  constructor(public http: Http,
+  constructor(public http: HttpClient,
               public snackBar: MatSnackBar,
               public endpointService: EndpointMetadataService,
               public securityTokenService: SecurityTokenService) {

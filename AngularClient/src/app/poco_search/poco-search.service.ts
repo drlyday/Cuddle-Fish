@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
 
@@ -15,7 +16,7 @@ import { PocoRestService } from '../poco_shared/poco-rest.service';
 export class PocoSearchService extends PocoRestService {
   isloading = false;
 
-  constructor(readonly http: Http,
+  constructor(readonly http: HttpClient,
               readonly endpointService: EndpointMetadataService,
               readonly securityService: SecurityService,
               readonly tokenSecurityService: SecurityTokenService,

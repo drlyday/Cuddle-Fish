@@ -2,7 +2,7 @@
 import { NgModule, APP_INITIALIZER }        from '@angular/core';
 import { CommonModule }                     from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule }                       from '@angular/http';
+import { HttpClientModule }                 from '@angular/common/http';
 
 import { MaterialModule } from './app-material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +43,7 @@ import { ConfigurationService }    from './configuration/configuration.serv
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     MaterialModule,
     AppRoutingModule
   ],
@@ -51,7 +51,7 @@ import { ConfigurationService }    from './configuration/configuration.serv
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     MaterialModule,
     AppRoutingModule,
     DynamicFormComponent,

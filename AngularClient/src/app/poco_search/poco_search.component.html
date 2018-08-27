@@ -1,5 +1,5 @@
 ﻿<div *ngIf="endpointCategories" class="basicpad">
-  <mat-tab-group  (selectChange)="onTabSelection($event)">
+  <mat-tab-group  (selectedTabChange)="onTabSelection($event)">
     <div *ngIf="endpointMetadata">
       <mat-tab *ngFor="let category of endpointCategories"
               (selectChange)='onTabSelection($event)'

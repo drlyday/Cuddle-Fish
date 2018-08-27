@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
 
@@ -16,7 +17,7 @@ export class PocoSearchServiceMock {
     httpHeaders = new Headers({'Content-Type': 'application/json'});
     timeout = 6000;
     isloading = false;
-    http: Http;
+    http: HttpClient;
     endpointService: EndpointMetadataService;
     securityService: SecurityService;
     tokenSecurityService: SecurityTokenService;

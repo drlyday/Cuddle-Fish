@@ -1,8 +1,9 @@
 // tslint:disable:import-spacing
 import { Injectable }       from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable }                    from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import * as moment from 'moment';
 
@@ -23,7 +24,7 @@ export class QuestionService {
   isCreateQuestion = false;
   isQuestionFormRequired: boolean;
 
-  constructor(private readonly http: Http,
+  constructor(private readonly http: HttpClient,
               private readonly pocoRenderingService: PocoRenderingService,
               private readonly pocoFormattingService: PocoFormattingService) { }
 

@@ -1,5 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Headers, URLSearchParams, RequestOptions, Response } from '@angular/http';
+import { Headers, URLSearchParams, RequestOptions, Response } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
 import { ConfigurationService } from '../configuration/configuration.service';
@@ -9,7 +10,7 @@ export class SecurityService {
   public static tokenName = 'AdminUiSecurityToken';
   private headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
 
-  constructor(public http: Http,
+  constructor(public http: HttpClient,
               private readonly configuationService: ConfigurationService) { }
 
   // login(username, password): Observable<any> {
