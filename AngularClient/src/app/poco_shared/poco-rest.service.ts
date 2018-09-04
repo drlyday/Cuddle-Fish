@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 import { MatSnackBar } from '@angular/material';
@@ -12,7 +11,7 @@ import { IEndpointAction } from '../metadata/endpoint-action';
 
 @Injectable()
 export class PocoRestService {
-  protected httpHeaders = new Headers({'Content-Type': 'application/json'});
+  protected httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   protected timeout = 60000;
 
   constructor(public http: HttpClient,
@@ -23,27 +22,27 @@ export class PocoRestService {
     this.addHeaders(securityHeader);
   }
 
-  addHeaders(headers: Headers) {
-    if (headers instanceof Headers) {
-      headers.forEach((values: string[], name: string) => {
-        values.forEach(value => this.httpHeaders.append(name, value));
-      });
+  addHeaders(headers: HttpHeaders) {
+    //if (headers instanceof Headers) {
+    //  headers.forEach((values: string[], name: string) => {
+    //    values.forEach(value => this.httpHeaders.append(name, value));
+    //  });
       return;
-    }
+    //}
   }
 
-  addHeadersToTarget(headersTarget: Headers, headers: Headers) {
+  addHeadersToTarget(headersTarget: Headers, headers: HttpHeaders) {
     if (headers instanceof Headers) {
-      headers.forEach((values: string[], name: string) => {
-        values.forEach(value => headersTarget.append(name, value));
-      });
+      //headers.forEach((values: string[], name: string) => {
+      //  values.forEach(value => headersTarget.append(name, value));
+      //});
       return;
     }
   }
 
   getOptions() {
-    const options = new RequestOptions({ headers: this.httpHeaders });
-    return options;
+
+    return { headers: this.httpHeaders };
   }
 
   openSnackBar(message: string, action: string) {
@@ -53,7 +52,7 @@ export class PocoRestService {
   }
 
   protected handleResponseFeedback(response: any, action: string = '', showFeedback = false) {
-    const thing = response.json();
+    const thing = response;
     if (showFeedback) {
       this.openSnackBar(action, 'OK');
     }
@@ -74,7 +73,7 @@ export class PocoRestService {
   }
 
   protected handleActionFeedback(response: any, action: string = '', requestedItemCount: number, showFeedback = false) {
-    const proccessedItemCount = response.json();
+    const proccessedItemCount = response;
     if (showFeedback) {
       this.openSnackBar(action + ' Complete for ' + proccessedItemCount  + ' of ' + requestedItemCount + '!', 'OK');
     }

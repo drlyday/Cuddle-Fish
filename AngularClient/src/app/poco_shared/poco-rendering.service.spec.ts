@@ -12,7 +12,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 

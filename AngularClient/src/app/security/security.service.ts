@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
-import { Headers, URLSearchParams, RequestOptions, Response } from '@angular/http';
-import { HttpClient} from '@angular/common/http';
+import { URLSearchParams, Response } from '@angular/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
 import { ConfigurationService } from '../configuration/configuration.service';
@@ -8,14 +8,14 @@ import { ConfigurationService } from '../configuration/configuration.service';
 @Injectable()
 export class SecurityService {
   public static tokenName = 'AdminUiSecurityToken';
-  private headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+  private headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
   constructor(public http: HttpClient,
               private readonly configuationService: ConfigurationService) { }
 
   // login(username, password): Observable<any> {
   //   const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  //   const options = new RequestOptions({ headers: headers });
+  //   const options = { headers: headers };
   //   const body: URLSearchParams = new URLSearchParams();
   //   body.set('grant_type', 'password');
   //   body.set('username', username);
@@ -26,10 +26,10 @@ export class SecurityService {
   // }
 
   loginNTLM(): Observable<any> {
-    const headers = new Headers({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
     });
-    const options = new RequestOptions({ headers: headers, withCredentials: true });
+    const options = { headers: headers, withCredentials: true };
     const body: URLSearchParams = new URLSearchParams();
     // const authUrl = this.tokenUrl + '?client_id=' + this.clientId;
     const configuratinPromise = this.configuationService.loadConfiguration();
@@ -43,8 +43,8 @@ export class SecurityService {
   }
 
   private handleData(response: Response) {
-    const data = response.json();
-    localStorage.setItem(SecurityService.tokenName, data.access_token);
+    const data = response;
+    // localStorage.setItem(SecurityService.tokenName, data.access_token);
     return data;
   }
 
@@ -59,9 +59,9 @@ export class SecurityService {
   //   const url = 'http://localhost:3000/api/roles';
   //   const token = localStorage.getItem(SecurityService.tokenName);
   //   const headers = new Headers({ 'Authorization': `Bearer ${SecurityService.tokenName}` });
-  //   const options = new RequestOptions({ headers: headers });
+  //   const options = { headers: headers };
 
-  //   return this.http.get(url, options).map(res => res.json());
+  //   return this.http.get(url, options).map(res => res);
   // }
 
   public logout() {

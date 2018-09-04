@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Headers,  RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
@@ -30,10 +29,9 @@ export class ActionsService extends PocoRestService {
         const headers = new Headers();
         headers.append('ContentType', 'multipart');
         headers.append('runId', key);
-        this.addHeadersToTarget(headers, this.securityTokenService.httpAuthorizationHeader)
+        this.addHeadersToTarget(headers, this.securityTokenService.httpAuthorizationHeader);
 
-        const options = new RequestOptions({ headers: headers });
-        const uploadPromise = this.http.post(url, formData, options)
+        const uploadPromise = this.http.post(url, formData, this.getOptions())
                                   .catch(error => Observable.throw(error))
                                   .subscribe(
                                     event => {
@@ -61,8 +59,7 @@ export class ActionsService extends PocoRestService {
 
     if (requestedItemCount > 0) {
         const headers = this.securityTokenService.httpAuthorizationHeader;
-        const options = new RequestOptions({ headers: headers });
-        this.http.post(url, payload, options)
+        this.http.post(url, payload, this.getOptions())
                   .catch(error => Observable.throw(error))
                   .subscribe(
                     event => {

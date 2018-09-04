@@ -3,7 +3,7 @@ import 'rxjs/add/operator/map';
 import { JwtHelper } from 'angular2-jwt';
 import { Router } from '@angular/router';
 import { SecurityService } from './security.service';
-import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class SecurityTokenService {
@@ -48,13 +48,13 @@ export class SecurityTokenService {
   }
 
   get httpRequestOptions() {
-    const headers = new Headers({ 'Authorization': `Bearer ${this.token}` });
-    const options = new RequestOptions({ headers: headers });
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.token}` });
+    const options = { headers: headers };
     return options;
   }
 
-  get httpAuthorizationHeader(){
-    const headers = new Headers({ 'Authorization': `Bearer ${this.token}` });
+  get httpAuthorizationHeader() {
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.token}` });
     return headers;
   }
 

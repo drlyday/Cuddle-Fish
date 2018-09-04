@@ -33,6 +33,14 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
             return db.Movies;
         }
 
+        [AllowCrossSiteJson]
+        [Route("api/moviesangular/create")]
+      public IHttpActionResult GetMovie()
+      {
+           Movie movie = new Movie(){ID = (new Random(10000000)).Next(), ReleaseDate = DateTime.Today};
+           return Json(movie);
+      }
+
         // GET: api/Movies/5
         //[ResponseType(typeof(Movie))]
         [AllowCrossSiteJson]
@@ -93,6 +101,16 @@ namespace MovieStoreWebsiteMVC.Areas.MovieStore.Controllers.Api
 
             
         }
+
+        //[AllowCrossSiteJson]
+        //[Route("api/metadata/moviesangular")]
+        //[HttpGet]
+        //public IHttpActionResult Create()
+        //{
+        //    var movie = new Movie(){ID = (new Random(10000000)).Next()};
+
+        //    return Json(movie, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        //}
 
         // PUT: api/Movies/5
         [ResponseType(typeof(void))]

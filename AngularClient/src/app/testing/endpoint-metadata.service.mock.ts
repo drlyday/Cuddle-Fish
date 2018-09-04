@@ -1,6 +1,5 @@
 // tslint:disable:import-spacing
 import { Injectable }    from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { MatSnackBar } from '@angular/material';
@@ -47,7 +46,7 @@ export class EndpointMetadataServiceMock {
     isloading = false;
     httpHeaders = new Headers({'Content-Type': 'application/json'});
 
-    readonly http: Http;
+    readonly http: HttpClient;
     readonly configuationService: ConfigurationService;
     readonly snackBar: MatSnackBar;
     readonly securityService: SecurityService;
@@ -57,7 +56,7 @@ export class EndpointMetadataServiceMock {
 addHeaders(headers: Headers) { }
 
 getOptions() {
-    const options = new RequestOptions({ headers: this.httpHeaders });
+    const options = { headers: this.httpHeaders };
     return options;
 }
 
@@ -80,7 +79,7 @@ onlyUnique(value, index, self) {
 
   handleResponse(response: any) {
     // set Metadata
-    this.endpointsMetadata = response.json() as IEndPointMetadata[];
+    this.endpointsMetadata = response as IEndPointMetadata[];
 
     return new Promise(resolve => resolve(this.endpointsMetadata));
   }

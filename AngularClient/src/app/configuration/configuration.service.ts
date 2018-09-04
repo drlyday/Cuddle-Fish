@@ -1,5 +1,4 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Response, Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -78,7 +77,7 @@ export class ConfigurationService {
 
   private storeConfiguration(response: any): Promise<Configuration> {
     console.log('Configuration loaded:' +  response );
-    this.configuration = response.json();
+    this.configuration = response;
     return new Promise<Configuration>(resolve => resolve(this.configuration));
   }
 }

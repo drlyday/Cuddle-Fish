@@ -1,7 +1,6 @@
 // tslint:disable:import-spacing
 import { Injectable }    from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import { MatSnackBar } from '@angular/material';
 
@@ -15,36 +14,36 @@ export class EndpointMetadataService {
   endpointsMetadata: IEndPointMetadata[];
   metadatasCategories: string[];
   isloading = false;
-  httpHeaders = new Headers({'Content-Type': 'application/json'});
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(readonly http: HttpClient,
               readonly configuationService: ConfigurationService,
               readonly snackBar: MatSnackBar,
               readonly securityService: SecurityService,
               readonly tokenSecurityService: SecurityTokenService,
-              securityTokenService: SecurityTokenService,) {
+              securityTokenService: SecurityTokenService) {
     const securityHeader = this.tokenSecurityService.httpAuthorizationHeader;
     this.addHeaders(securityHeader);
   }
 
-  addHeaders(headers: Headers) {
-    if (headers instanceof Headers) {
-      headers.forEach((values: string[], name: string) => {
-        values.forEach(value => this.httpHeaders.append(name, value));
-      });
+  addHeaders(headers: HttpHeaders) {
+    //if (headers instanceof HttpHeaders) {
+      // BAD!  Quick fix for compilation
+      //headers.keys.forEach((values: string[], name: string) => {
+        //values.forEach(value => this.httpHeaders.append(name, value));
+      //});
       return;
-    }
+    //}
   }
 
   getOptions() {
-    const options = new RequestOptions({ headers: this.httpHeaders });
+    const options = { headers: this.httpHeaders };
     return options;
   }
 
   getEndPointMetadata(): Promise<IEndPointMetadata[]> {
     if (!this.endpointsMetadata) {
       const headers = this.tokenSecurityService.httpAuthorizationHeader;
-      //const options = new RequestOptions({ headers: headers });
       const options = this.getOptions();
       const endpointMetadataPromise = this.configuationService
                                           .loadConfiguration()
@@ -60,7 +59,7 @@ export class EndpointMetadataService {
   getEndPointActionMetadata(): Promise<IEndPointMetadata[]> {
     if (!this.endpointsMetadata) {
       const headers = this.tokenSecurityService.httpAuthorizationHeader;
-      const options = new RequestOptions({ headers: headers });
+      const options = { headers: headers };
       const endpointMetadataPromise = this.configuationService
                                           .loadConfiguration()
                                           .then(config => this.http.get(config.endpointSvcUrl, options)
@@ -95,7 +94,7 @@ export class EndpointMetadataService {
   }
 
   handleResponse(response: any): Promise<IEndPointMetadata[]> {
-    this.endpointsMetadata = response.json() as IEndPointMetadata[];
+    this.endpointsMetadata = response as IEndPointMetadata[];
     return new Promise<IEndPointMetadata[]>(resolve => resolve(this.endpointsMetadata));
   }
 

@@ -3,7 +3,6 @@ import { PocoMetadataMock } from '../testing/poco-metamodel.data'
 import { PocoMetadataService } from '../metadata/poco-metadata.service';
 
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 
 import { MatSnackBar } from '@angular/material';
@@ -42,7 +41,7 @@ export class PocoMetadataServiceMock {
         const url = endpointurl + '/roles';
 
         const headers = this.tokenSecurityService.httpAuthorizationHeader;
-        const options = new RequestOptions({ headers: headers });
+        const options = { headers: headers };
         const roles = Promise.resolve(this.http.get(url, options).timeout(6000)
         .toPromise()
         .then(response => this.handleSecurityRoleResponse(response))
@@ -58,12 +57,12 @@ export class PocoMetadataServiceMock {
     }
 
     handleSecurityRoleResponse(response: any) {
-    const securityRoles = response.json() as SecurityRoles;
+    const securityRoles = response as SecurityRoles;
     return new Promise(resolve => resolve(securityRoles));
     }
 
     handleResponse(response: any) {
-    const newMetadatas = response.json() as PocoBaseMetadata;
+    const newMetadatas = response as PocoBaseMetadata;
     this.metamodel = newMetadatas;
     return new Promise(resolve => resolve(this.metamodel));
     }

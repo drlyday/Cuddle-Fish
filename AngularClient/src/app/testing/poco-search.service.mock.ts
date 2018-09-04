@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
@@ -51,7 +50,7 @@ export class PocoSearchServiceMock {
     }
     
     getOptions() {
-      const options = new RequestOptions({ headers: this.httpHeaders });
+      const options = { headers: this.httpHeaders };
       return options;
     }
     
@@ -81,13 +80,13 @@ export class PocoSearchServiceMock {
   
     handleResponse(response: any) {
       this.isloading = false;
-      const thing = response.json(); // as {key: string, value: string}[];
+      const thing = response; // as {key: string, value: string}[];
       return thing;
     }
   
     handleResponseForSearch(response: any) {
       this.isloading = false;
-      const thing = response.json(); // as {key: string, value: string}[];
+      const thing = response; // as {key: string, value: string}[];
       return thing;
     }
   

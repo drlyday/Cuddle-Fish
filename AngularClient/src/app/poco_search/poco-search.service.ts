@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import 'rxjs/add/operator/toPromise';
@@ -100,7 +99,7 @@ export class PocoSearchService extends PocoRestService {
 
   callGetPoco(url: string): Promise<object> {
     const headers = this.tokenSecurityService.httpAuthorizationHeader;
-    const options = new RequestOptions({ headers: headers });
+    const options = this.getOptions();
 
     const poco = Promise.resolve(this.http.get(url, options).timeout(600000)
                         .toPromise()
