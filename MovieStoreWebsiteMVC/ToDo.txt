@@ -1,4 +1,8 @@
-﻿Done:
+﻿NEXT Functionality: 
+
+
+Done:
+- Angular 6 integration
 - Add MVC and Integrate into Entity Framework
 - Add Javascript file on load
 - Web ajax calls to Api
